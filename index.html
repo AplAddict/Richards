@@ -1,56 +1,570 @@
-<html lang="en">
+<!DOCTYPE html>
+<html class="no-js" lang="en">
 
 <head>
-  <meta charset="utf-8">
 
-  <title>Richard's Body Shop</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+   <title>Isaac Zipperstein - Home</title>
+   <meta property="og:title" content="Isaac Zipperstein" />
+   <meta property="og:image" content="http://isaaczipperstein.com/images/certifications/HS13.jpg" />
+   <meta property="og:image:alt" content="generating link preview" />
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:creator" content="Isaac Zipperstein">
+   <meta name="twitter:site" content="isaaczipperstein.com">
+   <meta name="twitter:title" content="Isaac Zipperstein">
+   <meta name="twitter:image:src" content="http://isaaczipperstein.com/images/certifications/HS13.jpg">
+   <meta name="twitter:image:width" content="2006">
+   <meta name="twitter:image:height" content="1123">
+   <meta name="description" content="">
+   <meta name="author" content="">
 
-  <link rel="stylesheet" href="styles.css">
+   <!-- Mobile Specific Metas
+   ================================================== -->
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+   <!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="css/default.css">
+   <link rel="stylesheet" href="css/layout.css">
+   <link rel="stylesheet" href="css/media-queries.css">
+   <link rel="stylesheet" href="css/magnific-popup.css">
+
+   <!-- Script
+   ================================================== -->
+   <script src="js/modernizr.js"></script>
+
+   <!-- Favicons
+	================================================== -->
+   <link rel="shortcut icon" href="favicon.png">
 
 </head>
 
 <body>
-  <div class="banner"><span>Free estimates available for eligible vehicles. <a href="">Learn More</a></span></div>
-  <div id="main">
-    <div class="topnav" id="myTopnav">
-        <a class="home" href="#home">Home</a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
-        <a href="javascript:void(0);" style="font-size:15px;position: absolute; right: 0;top: 0;" class="icon" onclick="nav()">&#9776;</a>
-    </div>
-    <div class="img-text">
-      <h1>Richard's Body Shop</h1>
-      <h3>Tesla Certified</h3>
-    </div>
-  </div>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-  <script>
-    window.onscroll = function () { scroll() };
+   <!-- Header
+   ================================================== -->
+   <header id="home">
 
-    var navbar = document.getElementById("myTopnav");
-    var sticky = navbar.offsetTop;
+      <nav id="nav-wrap">
 
-    function scroll() {
-      if (window.pageYOffset > sticky) {
-        navbar.classList.add("sticky")
-      } else {
-        navbar.classList.remove("sticky");
-      }
-    }
+         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+         <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
 
-    function nav() {
-      var x = document.getElementById("myTopnav");
-      if (x.className === "topnav") {
-        x.className += " responsive";
-      } else {
-        x.className = "topnav";
-      }
-    }
-  </script>
+         <ul id="nav" class="nav">
+            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
+            <li><a class="smoothscroll" href="#contact">Contact</a></li>
+            <li><a class="smoothscroll" href="#certifications">Certifications</a></li>
+            <li><a class="smoothscroll" href="#documents">Documents</a></li>
+         </ul> <!-- end #nav -->
+
+      </nav> <!-- end #nav-wrap -->
+
+      <div class="row banner">
+         <div class="banner-text">
+            <h1 class="responsive-headline">Richard's Body Shop</h1>
+            <h3></h3>
+            <hr />
+            <ul class="social">
+               <li><a href="mailto:office@richardsbodyshop.com"><i class="fa fa-envelope"></i></a></li>
+               <li><a href="tel:7735883301"><i class="fa fa-phone"></i></a></li>
+            </ul>
+         </div>
+      </div>
+
+      <p class="scrolldown">
+         <a class="smoothscroll" href="#contact"><i class="icon-down-circle"></i></a>
+      </p>
+
+   </header> <!-- Header End -->
+
+
+   <!-- Contact Section
+   ================================================== -->
+   <section id="contact">
+
+      <div class="row">
+
+         <div class="three columns">
+
+            <img class="profile-pic" src="images/me.png" alt="" />
+
+         </div>
+
+         <div class="nine columns main-col">
+            <div class="row">
+
+               <div class="columns contact-details">
+
+                  <h2>Contact Details</h2>
+                  <p class="address">
+                     <span>Richard's Body Shop</span><br>
+                     <span>3041 W Lawrence Ave<br>
+                        Chicago, IL 60625 US
+                     </span><br>
+                     <a href="tel:3127925933"><span>(773)-588-3301</span></a><br>
+                     <a href="mailto:office@richardsbodyshop.com"><span>office@richardsbodyshop.com</span></a>
+                  </p>
+
+               </div>
+
+               <div class="columns download">
+                  <div class="mapouter">
+                     <div class="gmap_canvas"><iframe class="gmap_iframe" frameborder="0" scrolling="no"
+                           marginheight="0" marginwidth="0"
+                           src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=3041 w Lawrence&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a
+                           href="https://embed-googlemap.com">embed-googlemap.com</a></div>
+                     <style>
+                        .mapouter {
+                           position: relative;
+                           text-align: right;
+                           width: 400px;
+                           max-width: 100%;
+                           height: 200px;
+                        }
+
+                        .gmap_canvas {
+                           overflow: hidden;
+                           background: none !important;
+                           width: 400px;
+                           max-width: 100%;
+                           height: 200px;
+                        }
+
+                        .gmap_iframe {
+                           width: 400px !important;
+                           max-width: 100% !important;
+                           height: 200px !important;
+                        }
+                     </style>
+                  </div>
+               </div>
+
+            </div> <!-- end row -->
+
+         </div> <!-- end .main-col -->
+         <br><br><p style="margin-left: 25px; margin-right: 25px;">Determined to make our customer’s experience a pleasant one. Our quality and high-tech repairs are
+         provided with a professional and incisive service. Richard’s Body Shop is devoted to go beyond and
+         surpass our customer’s expectations. We strive to be the best in every aspect of the industry. We feel
+         our multiple shops are an extension of ourselves thus we strive to have outstanding leadership,
+         negotiation, and customer service and communication skills. As a family business we consider our
+         employees part of our family that is why our relationship with our employees, customers, and insurance
+         companies are very important to us.</p>
+      </div>
+
+   </section> <!-- contact Section End-->
+
+
+
+   <!-- Certifications Section
+   ================================================== -->
+   <section id="certifications">
+
+      <div class="row">
+
+         <div class="twelve columns collapsed">
+
+            <h1>Certifications</h1>
+
+            <!-- certifications-wrapper -->
+            <div id="certifications-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
+               <div class="row">
+                  <div class="columns certifications-item">
+                     <div class="item-wrap">
+
+                        <a href="#modal-01" title="">
+                           <img alt="" src="https://www.richardsbodyshopchicago.com/wp-content/uploads/slider/cache/84feaead52408e8cd99fec42d101813e/image19.png">
+                           <div class="overlay">
+                              <div class="certifications-item-meta">
+                                 <h5>Tesla</h5>
+                              </div>
+                           </div>
+                           <div class="link-icon"><i class="icon-plus"></i></div>
+                        </a>
+
+                     </div>
+                  </div>
+
+                  <div class="columns certifications-item">
+                     <div class="item-wrap">
+
+                        <a href="#modal-02" title="">
+                           <img alt="" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcoalitionforfuturemobility.com%2Fwp-content%2Fuploads%2F2020%2F11%2Frivian-logo-full-color-1.png&f=1&nofb=1&ipt=40db8ff7dfdda29df023a2c9b95f01d60e8e715bb5b444a0638a87942c597a83&ipo=images">
+                           <div class="overlay">
+                              <div class="certifications-item-meta">
+                                 <h5>Rivian</h5>
+                              </div>
+                           </div>
+                           <div class="link-icon"><i class="icon-plus"></i></div>
+                        </a>
+
+                     </div>
+                  </div>
+
+                  <div class="columns certifications-item">
+                     <div class="item-wrap">
+
+                        <a href="#modal-03" title="">
+                           <img alt="" src="https://www.richardsbodyshopchicago.com/wp-content/uploads/slider/cache/119fec76022e2545984c5a99a04931cb/17_FCA_Cert_Collision_4C.png">
+                           <div class="overlay">
+                              <div class="certifications-item-meta">
+                                 <h5>MOPAR</h5>
+                              </div>
+                           </div>
+                           <div class="link-icon"><i class="icon-plus"></i></div>
+                        </a>
+
+                     </div>
+                  </div>
+
+                  <div class="columns certifications-item">
+                     <div class="item-wrap">
+
+                        <a href="#modal-04" title="">
+                           <img alt="" src="images/inifiniti.jpg">
+                           <div class="overlay">
+                              <div class="certifications-item-meta">
+                                 <h5>Infiniti</h5>
+                              </div>
+                           </div>
+                           <div class="link-icon"><i class="icon-plus"></i></div>
+                        </a>
+
+                     </div>
+                  </div>
+               </div>
+
+               <div id="collapse-content" class="row">
+                  <div class="columns certifications-item">
+                     <div class="item-wrap">
+
+                        <a href="#modal-05" title="">
+                           <img src="https://www.richardsbodyshopchicago.com/wp-content/uploads/slider/cache/1848c98185fb4d79fb84ecf0c7f1aa29/image2.png">
+                           <div class="overlay">
+                              <div class="certifications-item-meta">
+                                 <h5>Jaguar</h5>
+                              </div>
+                           </div>
+                           <div class="link-icon"><i class="icon-plus"></i></div>
+                        </a>
+
+                     </div>
+                  </div>
+
+                  <div class="columns certifications-item">
+                     <div class="item-wrap">
+
+                        <a href="#modal-06" title="">
+                           <img alt="" src="https://www.richardsbodyshopchicago.com/wp-content/uploads/slider/cache/01998cee83c2c2d30097f77501812625/image3.png">
+                           <div class="overlay">
+                              <div class="certifications-item-meta">
+                                 <h5>Land Rover</h5>
+                              </div>
+                           </div>
+                           <div class="link-icon"><i class="icon-plus"></i></div>
+                        </a>
+
+                     </div>
+                  </div>
+
+                  <div class="columns certifications-item">
+                     <div class="item-wrap">
+
+                        <a href="#modal-07" title="">
+                           <img alt="" src="https://www.richardsbodyshopchicago.com/wp-content/uploads/slider/cache/7ed1e7634466fd52b4bdc526d67c5c1a/NissanCollisionRepairNetworkChromeLogo_UpdatedNEWFONTS_9_2016_BLK_LG.png">
+                           <div class="overlay">
+                              <div class="certifications-item-meta">
+                                 <h5>Nissan</h5>
+                              </div>
+                           </div>
+                           <div class="link-icon"><i class="icon-plus"></i></div>
+                        </a>
+
+                     </div>
+                  </div>
+
+                  <div class="columns certifications-item">
+                     <div class="item-wrap">
+
+                        <a href="#modal-08" title="">
+                           <img alt="" src="https://www.richardsbodyshopchicago.com/wp-content/uploads/slider/cache/11e99c69931ef76b3946dc1333237f48/lg_hor_Subaru-Certified-Collision_4C_-768x593.jpg">
+                           <div class="overlay">
+                              <div class="certifications-item-meta">
+                                 <h5>Subaru</h5>
+                              </div>
+                           </div>
+                           <div class="link-icon"><i class="icon-plus"></i></div>
+                        </a>
+
+                     </div>
+                  </div>
+
+                  <div class="columns certifications-item">
+                     <div class="item-wrap">
+
+                        <a href="#modal-09" title="">
+                           <img alt="" src="https://www.richardsbodyshopchicago.com/wp-content/uploads/slider/cache/506248e5a0e487e76dcbc63142912306/ICAR.png">
+                              muted playsinline></video>
+                           <div class="overlay">
+                              <div class="certifications-item-meta">
+                                 <h5>ICar Gold Class</h5>
+                              </div>
+                           </div>
+                           <div class="link-icon"><i class="icon-plus"></i></div>
+                        </a>
+
+                     </div>
+                  </div>
+
+                  <div class="columns certifications-item">
+                     <div class="item-wrap">
+
+                        <a href="#modal-10" title="">
+                           <img alt="" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs19525.pcdn.co%2Fwp-content%2Fuploads%2F2017%2F02%2FAssured-Performance.jpg&f=1&nofb=1&ipt=749d5911a3a61c5398cbc5b925ce4a74111c87cd96aa5674ed22c05de23cd5b8&ipo=images">
+                           <div class="overlay">
+                              <div class="certifications-item-meta">
+                                 <h5>Assured Performance</h5>
+                              </div>
+                           </div>
+                           <div class="link-icon"><i class="icon-plus"></i></div>
+                        </a>
+
+                     </div>
+                  </div>
+
+               </div>
+
+            </div> <!-- certifications-wrapper end -->
+
+         </div> <!-- twelve columns end -->
+
+         <h1 onclick="collapse()">View <span id="moreless">more</span> of our certifications.</h1>
+
+         <!-- Modal Popup
+	      --------------------------------------------------------------- -->
+
+         <div id="modal-01" class="popup-modal mfp-hide">
+
+            <img class="scale-with-grid" src="https://www.richardsbodyshopchicago.com/wp-content/uploads/slider/cache/84feaead52408e8cd99fec42d101813e/image19.png" alt="" />
+
+            <div class="description-box">
+               <h4>Tesla</h4>
+               <p></p>
+               <span class="categories"><i class="fa fa-tag"></i></span>
+            </div>
+
+            <div class="link-box">
+               <a href="#" target="_blank">Details</a>
+               <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+         </div><!-- modal-01 End -->
+
+         <div id="modal-02" class="popup-modal mfp-hide">
+
+            <img class="scale-with-grid" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcoalitionforfuturemobility.com%2Fwp-content%2Fuploads%2F2020%2F11%2Frivian-logo-full-color-1.png&f=1&nofb=1&ipt=40db8ff7dfdda29df023a2c9b95f01d60e8e715bb5b444a0638a87942c597a83&ipo=images" alt="" />
+
+            <div class="description-box">
+               <h4>Rivian</h4>
+               <p></p>
+               <span class="categories"><i class="fa fa-tag"></i></span>
+            </div>
+
+            <div class="link-box">
+               <a href="#" target="_blank">Details</a>
+               <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+         </div><!-- modal-02 End -->
+
+         <div id="modal-03" class="popup-modal mfp-hide">
+
+            <img class="scale-with-grid" src="https://www.richardsbodyshopchicago.com/wp-content/uploads/slider/cache/119fec76022e2545984c5a99a04931cb/17_FCA_Cert_Collision_4C.png" alt="" />
+
+            <div class="description-box">
+               <h4>MOPAR</h4>
+               <p></p>
+               <span class="categories"><i class="fa fa-tag"></i></span>
+            </div>
+
+            <div class="link-box">
+               <a href="#" target="_blank">Details</a>
+               <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+         </div><!-- modal-03 End -->
+
+         <div id="modal-04" class="popup-modal mfp-hide">
+
+            <img class="scale-with-grid" src="images/inifiniti.jpg" alt="" />
+
+            <div class="description-box">
+               <h4>Infiniti</h4>
+               <p></p>
+               <span class="categories"><i class="fa fa-tag"></i></span>
+            </div>
+
+            <div class="link-box">
+               <a href="#" target="_blank">Details</a>
+               <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+         </div><!-- modal-04 End -->
+
+         <div id="modal-05" class="popup-modal mfp-hide">
+
+            <img class="scale-with-grid" src="https://www.richardsbodyshopchicago.com/wp-content/uploads/slider/cache/1848c98185fb4d79fb84ecf0c7f1aa29/image2.png" alt="" />
+
+            <div class="description-box">
+               <h4>Jaguar</h4>
+               <p></p>
+               <span class="categories"><i class="fa fa-tag"></i></span>
+            </div>
+
+            <div class="link-box">
+               <a href="#" target="_blank">Details</a>
+               <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+         </div><!-- modal-05 End -->
+
+         <div id="modal-06" class="popup-modal mfp-hide">
+
+            <img class="scale-with-grid" src="https://www.richardsbodyshopchicago.com/wp-content/uploads/slider/cache/01998cee83c2c2d30097f77501812625/image3.png" alt="" />
+
+            <div class="description-box">
+               <h4>Land Rover</h4>
+               <p></p>
+               <span class="categories"><i class="fa fa-tag"></i></span>
+            </div>
+
+            <div class="link-box">
+               <a href="#" target="_blank">Details</a>
+               <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+         </div><!-- modal-06 End -->
+
+         <div id="modal-07" class="popup-modal mfp-hide">
+
+            <img class="scale-with-grid" src="https://www.richardsbodyshopchicago.com/wp-content/uploads/slider/cache/7ed1e7634466fd52b4bdc526d67c5c1a/NissanCollisionRepairNetworkChromeLogo_UpdatedNEWFONTS_9_2016_BLK_LG.png" alt="" />
+
+            <div class="description-box">
+               <h4>Nissan</h4>
+               <p></p>
+               <span class="categories"><i class="fa fa-tag"></i></span>
+            </div>
+
+            <div class="link-box">
+               <a href="#" target="_blank">Details</a>
+               <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+         </div><!-- modal-07 End -->
+
+         <div id="modal-08" class="popup-modal mfp-hide">
+
+            <img class="scale-with-grid" src="https://www.richardsbodyshopchicago.com/wp-content/uploads/slider/cache/11e99c69931ef76b3946dc1333237f48/lg_hor_Subaru-Certified-Collision_4C_-768x593.jpg" alt="" />
+
+            <div class="description-box">
+               <h4>Subaru</h4>
+               <p></p>
+               <span class="categories"><i class="fa fa-tag"></i></span>
+            </div>
+
+            <div class="link-box">
+               <a href="#" target="_blank">Details</a>
+               <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+         </div><!-- modal-08 End -->
+
+         <div id="modal-09" class="popup-modal mfp-hide">
+
+            <img class="scale-with-grid" src="https://www.richardsbodyshopchicago.com/wp-content/uploads/slider/cache/506248e5a0e487e76dcbc63142912306/ICAR.png" alt="" />
+
+            <div class="description-box">
+               <h4>ICar Gold Class</h4>
+               <p></p>
+               <span class="categories"><i class="fa fa-tag"></i></span>
+            </div>
+
+            <div class="link-box">
+               <a href="#" target="_blank">Details</a>
+               <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+         </div><!-- modal-09 End -->
+
+         <div id="modal-10" class="popup-modal mfp-hide">
+
+            <img class="scale-with-grid" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs19525.pcdn.co%2Fwp-content%2Fuploads%2F2017%2F02%2FAssured-Performance.jpg&f=1&nofb=1&ipt=749d5911a3a61c5398cbc5b925ce4a74111c87cd96aa5674ed22c05de23cd5b8&ipo=images" alt="" />
+
+            <div class="description-box">
+               <h4>Assured Performance</h4>
+               <p></p>
+               <span class="categories"><i class="fa fa-tag"></i></span>
+            </div>
+
+            <div class="link-box">
+               <a href="#" target="_blank">Details</a>
+               <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+         </div><!-- modal-10 End -->
+
+      </div> <!-- row End -->
+
+   </section> <!-- certifications Section End-->
+
+   <!-- Documents Section
+   ================================================== -->
+   <section id="documents" style="margin-top: 0;">
+      <center>
+         <h1>Documents</h1>To open the document in a new tab, please <a
+            href="https://powerforms.docusign.net/9af42be8-be81-46e4-9cfd-8a78ed4b4e82?env=na4&amp;acct=18d44872-eb3f-417f-b02b-126b78fca207"
+            target="_blank" rel="noopener">click here</a>
+      </center><br><br>
+      <iframe loading="lazy" style="margin: 0; width: 100%;"
+         src="https://powerforms.docusign.net/9af42be8-be81-46e4-9cfd-8a78ed4b4e82?env=na4&amp;acct=18d44872-eb3f-417f-b02b-126b78fca207"
+         width="100%" height="800" frameborder="0"></iframe>
+   </section> <!-- documents Section End-->
+
+
+   <!-- footer
+   ================================================== -->
+   <footer>
+
+      <div class="row">
+
+         <div class="twelve columns">
+
+            <ul class="social-links">
+               <li><a href="mailto:office@richardsbodyshop.com"><i class="fa fa-envelope"></i></a></li>
+               <li><a href="tel:7735883301"><i class="fa fa-phone"></i></a></li>
+            </ul>
+
+         </div>
+
+         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a>
+         </div>
+
+      </div>
+
+   </footer> <!-- Footer End-->
+
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+
+   <script src="js/jquery.flexslider.js"></script>
+   <script src="js/waypoints.js"></script>
+   <script src="js/jquery.fittext.js"></script>
+   <script src="js/magnific-popup.js"></script>
+   <script src="js/init.js"></script>
 
 </body>
 
