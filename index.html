@@ -1,0 +1,57 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Richard's Body Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+  <div class="banner"><span>Free estimates available for eligible vehicles. <a href="">Learn More</a></span></div>
+  <div id="main">
+    <div class="topnav" id="myTopnav">
+        <a class="home" href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="javascript:void(0);" style="font-size:15px;position: absolute; right: 0;top: 0;" class="icon" onclick="nav()">&#9776;</a>
+    </div>
+    <div class="img-text">
+      <h1>Richard's Body Shop</h1>
+      <h3>Tesla Certified</h3>
+    </div>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+  <script>
+    window.onscroll = function () { scroll() };
+
+    var navbar = document.getElementById("myTopnav");
+    var sticky = navbar.offsetTop;
+
+    function scroll() {
+      if (window.pageYOffset > sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+
+    function nav() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>
+
+</body>
+
+</html>
