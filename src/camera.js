@@ -19,11 +19,10 @@ class Camera {
 
   async start() {
     let constraints = {
-      audio: false,
       video: {
-        sourceId: this.id,
-        audio: false,
-        facingMode: { exact: environment }
+        facingMode: {
+          exact: "environment"
+        }
       }
     };
 
