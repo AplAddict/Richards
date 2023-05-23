@@ -18,13 +18,37 @@ class Camera {
   }
 
   async start() {
-    let constraints = {
-      video: {
-        facingMode: {
-          exact: "environment"
+    let constraints;
+    var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+    if (iOS) {
+      constraints = {
+        audio: false,
+        video: {
+          facingMode: 'environment',
+          mandatory: {
+            sourceId: this.id,
+            minWidth: 600,
+            maxWidth: 800,
+            minAspectRatio: 1.6
+          },
+          optional: []
         }
-      }
-    };
+      };
+    } else {
+      constraints = {
+        audio: false,
+        video: {
+          mandatory: {
+            sourceId: this.id,
+            minWidth: 600,
+            maxWidth: 800,
+            minAspectRatio: 1.6
+          },
+          optional: []
+        }
+      };
+    }
 
     this._stream = await Camera._wrapErrors(async () => {
       return await navigator.mediaDevices.getUserMedia(constraints);
@@ -45,7 +69,23 @@ class Camera {
     this._stream = null;
   }
 
- 
+  static async getCameras() {
+    await this._ensureAccess();
+
+    let devices = await navigator.mediaDevices.enumerateDevices();
+    return devices
+      .filter(d => d.kind === 'videoinput')
+      .map(d => new Camera(d.deviceId, cameraName(d.label)));
+  }
+
+  static async _ensureAccess() {
+    return await this._wrapErrors(async () => {
+      let access = await navigator.mediaDevices.getUserMedia({ video: true });
+      for (let stream of access.getVideoTracks()) {
+        stream.stop();
+      }
+    });
+  }
 
   static async _wrapErrors(fn) {
     try {
