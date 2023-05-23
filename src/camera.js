@@ -23,6 +23,7 @@ class Camera {
       video: {
         mandatory: {
           sourceId: this.id,
+          facingMode: { exact: "environment" },
           minWidth: 600,
           maxWidth: 800,
           minAspectRatio: 1.6
