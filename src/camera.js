@@ -23,7 +23,7 @@ class Camera {
       video: {
         sourceId: this.id,
         audio: false,
-        facingMode: { exact: "environment" }
+        facingMode: { exact: environment }
       }
     };
 
