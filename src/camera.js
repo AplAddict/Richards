@@ -21,12 +21,9 @@ class Camera {
     let constraints = {
       audio: false,
       video: {
-        mandatory: {
-          sourceId: this.id,
-          audio: false,
-          facingMode: { exact: "environment" }
-        },
-        optional: []
+        sourceId: this.id,
+        audio: false,
+        facingMode: { exact: "environment" }
       }
     };
 
