@@ -489,7 +489,6 @@ ul#nav li.current a { color: #ff0303; }
 	-o-transition: opacity 0.3s ease-in-out;
 	transition: opacity 0.3s ease-in-out;
 
-   background: url(../images/overlay-bg.png) repeat;
 }
 .certifications-item .item-wrap .link-icon {
    display: block;
