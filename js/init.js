@@ -216,15 +216,3 @@ function showSlides(n) {
    }
    slides[slideIndex - 1].style.display = "block";
 }
-
-if (window.matchMedia("(max-width: 800px)").matches) {
-   var row1Images = document.querySelectorAll('.row1 img');
-   for (var i = 0; i < row1Images.length; i++) {
-      row1Images[i].setAttribute('loading', 'lazy');
-   }
-} else {
-   var slideshowImages = document.querySelectorAll('.slideshow-container img');
-   for (var j = 0; j < slideshowImages.length; j++) {
-      slideshowImages[j].setAttribute('loading', 'lazy');
-   }
-}
