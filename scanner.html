@@ -116,21 +116,20 @@
         function onScanSuccess(decodeText, decodeResult) {
             if (/^\d{7}-\w{2}-[a-zA-Z]$/.test(decodeText)) {
                 var quantity = prompt('Enter +/- and then the number of part ' + decodeText + ' you would like to add/subtract from inventory.', '');
-                if (quantity < 0) {
-                    var data = quantity + ": " + prompt('Enter VIN', '');
-                } else {
-                    var data = quantity;
+                var vin = quantity < 0 ? prompt('Enter VIN', '') : null;
+                if (quantity !== null && (vin !== null || quantity >= 0)) {
+                    var data = vin !== null ? quantity + ": " + vin : quantity;
+                    fetch("https://hook.us1.make.com/tfme118y55za9wgcebxwau5u8jy3664p", {
+                        method: "POST",
+                        body: JSON.stringify({
+                            Note: decodeText,
+                            Data: data
+                        }),
+                        headers: {
+                            "Content-type": "application/json; charset=UTF-8"
+                        }
+                    });
                 }
-                fetch("https://hook.us1.make.com/tfme118y55za9wgcebxwau5u8jy3664p", {
-                    method: "POST",
-                    body: JSON.stringify({
-                        Note: decodeText,
-                        Data: data
-                    }),
-                    headers: {
-                        "Content-type": "application/json; charset=UTF-8"
-                    }
-                });
             }
         }
 
