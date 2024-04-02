@@ -116,6 +116,9 @@
         function onScanSuccess(decodeText, decodeResult) {
             if (!/^\d{7}-\w{2}-[a-zA-Z]$/.test(decodeText)) return;
 
+            const button = document.getElementById('html5-qrcode-button-camera-stop');
+            if (button) button.click();
+            
             const quantity = prompt('Enter +/- and then the number of part ' + decodeText + ' you would like to add/subtract from inventory.', '');
             const vin = quantity < 0 ? prompt('Enter VIN', '') : null;
             if (quantity === null || (quantity < 0 && vin === null)) {
