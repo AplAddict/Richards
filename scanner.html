@@ -12,10 +12,12 @@
 
 <body>
     <div class="container">
-        <h1>Scan QR Codes</h1>
+        <h1>Richard's Body Shop</h1>
+        <h2>Scan Tesla QR Codes</h2>
         <div class="section">
             <div id="my-qr-reader">
             </div>
+            <center><br><br><button onclick="process('-')">Manually Enter Part Number</button></center>
         </div>
     </div>
     <script src="https://unpkg.com/html5-qrcode">
@@ -24,6 +26,11 @@
 </body>
 <style>
     /* style.css file*/
+    a {
+        text-decoration: none !important;
+        color: #1d9bf0;
+    }
+
     body {
         display: flex;
         justify-content: center;
@@ -33,6 +40,8 @@
         box-sizing: border-box;
         text-align: center;
         background: rgb(128 0 0 / 66%);
+        font-family: 'opensans-regular', sans-serif;
+        font-weight: normal;
     }
 
     .container {
@@ -41,7 +50,8 @@
         margin: 5px;
     }
 
-    .container h1 {
+    .container h1,
+    .container h2 {
         color: #ffffff;
     }
 
@@ -78,12 +88,12 @@
         cursor: pointer;
         margin-top: 15px;
         margin-bottom: 10px;
-        background-color: #008000ad;
+        background-color: rgb(128 0 0 / 66%);;
         transition: 0.3s background-color;
     }
 
     button:hover {
-        background-color: #008000;
+        background-color: rgb(128 0 0 / 66%);;
     }
 
     #html5-qrcode-anchor-scan-type-change {
@@ -114,29 +124,7 @@
 
         // If found you qr code
         function onScanSuccess(decodeText, decodeResult) {
-            if (!/^\d{7}-\w{2}-[a-zA-Z]$/.test(decodeText)) return;
-
-            const button = document.getElementById('html5-qrcode-button-camera-stop');
-            if (button) button.click();
-
-            const quantity = prompt('Enter +/- and then the number of part ' + decodeText + ' you would like to add/subtract from inventory.', '');
-            const vin = quantity < 0 ? prompt('Enter VIN', '') : null;
-            if (quantity === null || (quantity < 0 && vin === null)) {
-                alert("Data submission canceled or incomplete.");
-                return;
-            }
-
-            const data = vin !== null ? `${quantity}: ${vin}` : quantity;
-            fetch("https://hook.us1.make.com/tfme118y55za9wgcebxwau5u8jy3664p", {
-                method: "POST",
-                body: JSON.stringify({ Note: decodeText, Data: data }),
-                headers: { "Content-type": "application/json; charset=UTF-8" }
-            })
-                .then(response => response.ok ? alert("Data successfully submitted!") : alert("Error submitting data. Please try again."))
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert("An error occurred while submitting data. Please try again later.");
-                });
+            process(decodeText);
         }
 
         let htmlscanner = new Html5QrcodeScanner(
@@ -145,6 +133,36 @@
         );
         htmlscanner.render(onScanSuccess);
     });
+
+    function process(text) {
+        if (text == "-") {
+            text = prompt('Enter the part number in the format: *******-**-*', '');
+            if (!/^\d{7}-\w{2}-[a-zA-Z]$/.test(text)) alert("Part number is not valid.");
+        }
+        if (!/^\d{7}-\w{2}-[a-zA-Z]$/.test(text)) return;
+
+        const button = document.getElementById('html5-qrcode-button-camera-stop');
+        if (button) button.click();
+
+        const quantity = prompt('Enter +/- and then the number of part ' + text + ' you would like to add/subtract from inventory.', '');
+        const vin = quantity < 0 ? prompt('Enter VIN', '') : null;
+        if (quantity === null || (quantity < 0 && vin === null)) {
+            alert("Data submission canceled or incomplete.");
+            return;
+        }
+
+        const data = vin !== null ? `${quantity}: ${vin}` : quantity;
+        fetch("https://hook.us1.make.com/tfme118y55za9wgcebxwau5u8jy3664p", {
+            method: "POST",
+            body: JSON.stringify({ Note: text, Data: data }),
+            headers: { "Content-type": "application/json; charset=UTF-8" }
+        })
+            .then(response => response.ok ? alert("Data successfully submitted!") : alert("Error submitting data. Please try again."))
+            .catch(error => {
+                console.error('Error:', error);
+                alert("An error occurred while submitting data. Please try again later.");
+            });
+    }
 </script>
 
 </html>
