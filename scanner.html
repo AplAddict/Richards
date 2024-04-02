@@ -6,14 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>QR Code Scanner / Reader
-    </title>
+    <title>Tesla QR Code Scanner</title>
 </head>
 
 <body>
     <div class="container">
         <h1>Richard's Body Shop</h1>
-        <h2>Scan Tesla QR Codes</h2>
+        <h2>Tesla QR Code Scanner</h2>
         <div class="section">
             <div id="my-qr-reader">
             </div>
@@ -137,7 +136,7 @@
     function process(text) {
         if (text == "-") {
             text = prompt('Enter the part number in the format: *******-**-*', '');
-            if (!/^\d{7}-\w{2}-[a-zA-Z]$/.test(text)) alert("Part number is not valid.");
+            if (!/^\d{7}-\w{2}-[a-zA-Z]$/.test(text)) alert("Data submission canceled or invalid part number.");
         }
         if (!/^\d{7}-\w{2}-[a-zA-Z]$/.test(text)) return;
 
