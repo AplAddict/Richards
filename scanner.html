@@ -87,12 +87,14 @@
         cursor: pointer;
         margin-top: 15px;
         margin-bottom: 10px;
-        background-color: rgb(128 0 0 / 66%);;
+        background-color: rgb(128 0 0 / 66%);
+        ;
         transition: 0.3s background-color;
     }
 
     button:hover {
-        background-color: rgb(128 0 0 / 66%);;
+        background-color: rgb(128 0 0 / 66%);
+        ;
     }
 
     #html5-qrcode-anchor-scan-type-change {
@@ -135,10 +137,14 @@
 
     function process(text) {
         if (text == "-") {
-            text = prompt('Enter the part number in the format: *******-**-*', '');
-            if (!/^\d{7}-\w{2}-[a-zA-Z]$/.test(text)) alert("Data submission canceled or invalid part number.");
+            text = prompt('Enter the part number in one of the following formats: *******-**-* (Tesla), **********-* (Rivian)', '');
+            if (!/^\d{7}-\w{2}-[a-zA-Z]$/.test(text) && !/^[a-zA-Z]{2}\d{8}-[a-zA-Z]$/.test(text)) { alert("Data submission canceled or invalid part number."); }
         }
-        if (!/^\d{7}-\w{2}-[a-zA-Z]$/.test(text)) return;
+        if (/^\d{7}-\w{2}-[a-zA-Z]$/.test(text) /* tesla */) {
+            var company = "tesla";
+        } else if (/^[a-zA-Z]{2}\d{8}-[a-zA-Z]$/.test(text) /* rivian */) {
+            var company = "rivian";
+        } else { return }
 
         const button = document.getElementById('html5-qrcode-button-camera-stop');
         if (button) button.click();
@@ -153,7 +159,7 @@
         const data = vin !== null ? `${quantity}: ${vin}` : quantity;
         fetch("https://hook.us1.make.com/tfme118y55za9wgcebxwau5u8jy3664p", {
             method: "POST",
-            body: JSON.stringify({ Note: text, Data: data }),
+            body: JSON.stringify({ Note: text, Data: data, Company: company}),
             headers: { "Content-type": "application/json; charset=UTF-8" }
         })
             .then(response => response.ok ? alert("Data successfully submitted!") : alert("Error submitting data. Please try again."))
