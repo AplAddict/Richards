@@ -129,15 +129,32 @@
             src="https://www.carwise.com/repair-status-plugin/render?o=h&amp;size=l&amp;type=i&amp;theme=l_1"
             style="border-radius:25px;border:none;height:200px;filter:hue-rotate(145deg);border: 0;text-align: center;margin: 0;box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.4), 0 8px 20px 0 rgba(0, 0, 0, 0.4);"
             frameborder="0" scrolling="no" height="200" width="400"></iframe><br><br></center>
-      <div class="CWPhotoEstimate" style="filter:hue-rotate(145deg);" data-domain="https://www.carwise.com"
-         data-rfid="516282" data-type="button" data-theme="b_1 s1" data-size="s"><a rel="nofollow"
-            href="https://www.carwise.com/auto-body-shops/richards-body-shop-inc-chicago-il-60625/516282"
-            target="_blank" title="Request an Estimate on carwise.com">Request an Estimate for our auto body shop on
-            carwise.com</a> - Find our <a rel="nofollow" rel="nofollow" href="https://www.carwise.com">Auto Body
-            Shop</a> on carwise.com</div>
-      <script type="text/javascript"
-         src="https://www.carwise.com/plugins-v2/photo-estimate-plugin/516282/resources/js/plugin.js" async></script>
-   </section>
+            <div id="widget-container" class="CWPhotoEstimate" data-domain="https://www.carwise.com" data-rfid="516282" data-type="button" data-theme="dg_1 l1" data-size="l">
+               <a rel="nofollow" href="https://www.carwise.com/auto-body-shops/richards-body-shop-inc-chicago-il-60625/516282" target="_blank" title="Request an Estimate on carwise.com">Request an Estimate for our auto body shop on carwise.com</a> - Find our <a rel="nofollow" href="https://www.carwise.com">Auto Body Shop</a> on carwise.com
+           </div>
+           <script type="text/javascript" src="https://www.carwise.com/plugins-v2/photo-estimate-plugin/516282/resources/js/plugin.js" async></script>
+           <script>
+             // Using MutationObserver to apply styles after widget updates
+             window.onload = function() {
+               const targetNode = document.getElementById('widget-container');
+           
+               const config = { attributes: true, childList: true, subtree: true };
+           
+               const callback = function(mutationsList, observer) {
+                   for(let mutation of mutationsList) {
+                       if (mutation.type === 'childList') {
+                           targetNode.style.clipPath = 'inset(0 33.33% 0 0)';
+                           targetNode.style.overflow = 'hidden';
+                       }
+                   }
+               };
+           
+               const observer = new MutationObserver(callback);
+               observer.observe(targetNode, config);
+             };
+           </script>
+           
+            </section>
    <!-- Contact Section
    ================================================== -->
    <section id="contact">
@@ -158,7 +175,7 @@
                   <h2>Contact Details</h2>
                   <p class="address">
                      <span>Richard's Body Shop</span><br>
-                     <span>3041 W Lawrence Ave<br>
+                     <span>3030 W Lawrence Ave<br>
                         Chicago, IL 60625 US
                      </span><br>
                      <a href="tel:7735883301"><span>(773)-588-3301</span></a><br>
@@ -171,7 +188,7 @@
                   <div class="mapouter">
                      <div class="gmap_canvas"><iframe class="gmap_iframe" frameborder="0" scrolling="no"
                            marginheight="0" marginwidth="0"
-                           src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=3041 w Lawrence&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a
+                           src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=3030 w Lawrence&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a
                            href="https://embed-googlemap.com">embed-googlemap.com</a></div>
                      <style>
                         .mapouter {
