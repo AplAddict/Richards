@@ -16,7 +16,10 @@
         <div class="section">
             <div id="my-qr-reader">
             </div>
-            <center><br><br><button onclick="process('-')">Manually Enter Part Number</button></center>
+            <center>
+                <br><br><button onclick="process('-')">Manually Enter Part Number</button><br>
+                <a href="https://chatgpt.com/g/g-6N8fPV0jh-richards-body-shop-gpt">Richard's GPT</a>
+            </center>
         </div>
     </div>
     <script src="https://unpkg.com/html5-qrcode">
@@ -134,32 +137,52 @@
         );
         htmlscanner.render(onScanSuccess);
     });
-
     function process(text) {
-        if (text == "-") {
+        if (text === "-") {
             text = prompt('Enter the part number in one of the following formats: *******-**-* (Tesla), **********-* (Rivian)', '');
-            if (!/^\d{7}-\w{2}-[a-zA-Z]$/.test(text) && !/^[a-zA-Z]{2}\d{8}-[a-zA-Z]$/.test(text)) { alert("Data submission canceled or invalid part number."); }
+
+            // Check if it's a long Tesla part code and convert it if necessary
+            if (text.length > 10 && text.slice(-10).match(/^\d{7}[0-9A-Z]{3}$/)) {
+                text = convertToTeslaPartCode(text);
+            }
+
+            if (!isValidPartNumber(text)) {
+                alert("Data submission canceled or invalid part number.");
+                return;
+            }
         }
-        if (/^\d{7}-\w{2}-[a-zA-Z]$/.test(text) /* tesla */) {
-            var company = "tesla";
-        } else if (/^[a-zA-Z]{2}\d{8}-[a-zA-Z]$/.test(text) /* rivian */) {
-            var company = "rivian";
-        } else { return }
+
+        // Check if the text is a long Tesla code and convert it if necessary
+        if (text.length > 10 && text.slice(-10).match(/^\d{7}[0-9A-Z]{3}$/)) {
+            text = convertToTeslaPartCode(text);
+        }
+
+        const company = getCompanyFromPartNumber(text);
+        if (!company) return;
 
         const button = document.getElementById('html5-qrcode-button-camera-stop');
         if (button) button.click();
 
         const quantity = prompt('Enter +/- and then the number of part ' + text + ' you would like to add/subtract from inventory.', '');
-        const vin = quantity < 0 ? prompt('Enter VIN', '') : null;
-        if (quantity === null || (quantity < 0 && vin === null)) {
-            alert("Data submission canceled or incomplete.");
+        if (!quantity || !isValidQuantity(quantity)) {
+            alert("Data submission canceled or invalid quantity.");
             return;
         }
 
-        const data = vin !== null ? `${quantity}: ${vin}` : quantity;
+        let vin = null;
+        if (parseInt(quantity, 10) < 0) {
+            vin = prompt('Enter VIN', '');
+            if (!vin) {
+                alert("Data submission canceled or incomplete.");
+                return;
+            }
+        }
+
+        const data = vin ? `${quantity}: ${vin}` : quantity;
+
         fetch("https://hook.us1.make.com/tfme118y55za9wgcebxwau5u8jy3664p", {
             method: "POST",
-            body: JSON.stringify({ Note: text, Data: data, Company: company}),
+            body: JSON.stringify({ Note: text, Data: data, Company: company }),
             headers: { "Content-type": "application/json; charset=UTF-8" }
         })
             .then(response => response.ok ? alert("Data successfully submitted!") : alert("Error submitting data. Please try again."))
@@ -167,6 +190,33 @@
                 console.error('Error:', error);
                 alert("An error occurred while submitting data. Please try again later.");
             });
+    }
+
+    function isValidPartNumber(text) {
+        const teslaRegex = /^\d{7}-\w{2}-[a-zA-Z]$/;
+        const rivianRegex = /^[a-zA-Z]{2}\d{8}-[a-zA-Z]$/;
+        return teslaRegex.test(text) || rivianRegex.test(text);
+    }
+
+    function getCompanyFromPartNumber(text) {
+        if (/^\d{7}-\w{2}-[a-zA-Z]$/.test(text)) {
+            return "tesla";
+        } else if (/^[a-zA-Z]{2}\d{8}-[a-zA-Z]$/.test(text)) {
+            return "rivian";
+        }
+        return null;
+    }
+
+    function isValidQuantity(quantity) {
+        return /^[+-]\d+$/.test(quantity);
+    }
+
+    function convertToTeslaPartCode(text) {
+        const lastTen = text.slice(-10);
+        const partNumber = lastTen.slice(0, 7);
+        const suffix = lastTen.slice(7, 9);
+        const revision = lastTen.slice(9);
+        return `${partNumber}-${suffix}-${revision}`;
     }
 </script>
 
