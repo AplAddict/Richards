@@ -141,10 +141,14 @@
         if (text === "-") {
             text = prompt('Enter the part number in one of the following formats: *******-**-* (Tesla), **********-* (Rivian)', '');
 
-            // Check if it's a long Tesla part code and convert it if necessary
-            if (text.length > 10 && text.slice(-10).match(/^\d{7}[0-9A-Z]{3}$/)) {
-                text = convertToTeslaPartCode(text);
-            }
+            // Debugging: Log the original text entered
+            console.log('Original input:', text);
+
+            // Preprocess the part number
+            text = preprocessPartNumber(text);
+
+            // Debugging: Log the preprocessed part number
+            console.log('Preprocessed part number:', text);
 
             if (!isValidPartNumber(text)) {
                 alert("Data submission canceled or invalid part number.");
@@ -152,9 +156,15 @@
             }
         }
 
-        // Check if the text is a long Tesla code and convert it if necessary
-        if (text.length > 10 && text.slice(-10).match(/^\d{7}[0-9A-Z]{3}$/)) {
-            text = convertToTeslaPartCode(text);
+        // Preprocess the part number if necessary
+        text = preprocessPartNumber(text);
+
+        // Debugging: Log the preprocessed part number before validation
+        console.log('Preprocessed part number (before validation):', text);
+
+        if (!isValidPartNumber(text)) {
+            alert("Data submission canceled or invalid part number.");
+            return;
         }
 
         const company = getCompanyFromPartNumber(text);
@@ -192,14 +202,37 @@
             });
     }
 
+    function preprocessPartNumber(text) {
+        let partNumber = text;
+
+        // Check if the part number starts with an ignored character
+        if (text.length > 13 && text.includes(':')) {
+            const parts = text.split(':');
+            partNumber = parts[0].slice(1); // Ignore the first character and get the rest
+            if (isValidPartNumber(partNumber)) {
+                return partNumber;
+            }
+        }
+
+        // Check if it's a long part number (use the last 10 characters)
+        if (text.length > 10) {
+            const lastTen = text.slice(-10);
+            if (lastTen.match(/^\d{7}[0-9A-Z]{3}$/)) {
+                return convertToTeslaPartCode(lastTen);
+            }
+        }
+
+        return partNumber;
+    }
+
     function isValidPartNumber(text) {
-        const teslaRegex = /^\d{7}-\w{2}-[a-zA-Z]$/;
+        const teslaRegex = /^\d{7}-\d{2}-[a-zA-Z]$/;
         const rivianRegex = /^[a-zA-Z]{2}\d{8}-[a-zA-Z]$/;
         return teslaRegex.test(text) || rivianRegex.test(text);
     }
 
     function getCompanyFromPartNumber(text) {
-        if (/^\d{7}-\w{2}-[a-zA-Z]$/.test(text)) {
+        if (/^\d{7}-\d{2}-[a-zA-Z]$/.test(text)) {
             return "tesla";
         } else if (/^[a-zA-Z]{2}\d{8}-[a-zA-Z]$/.test(text)) {
             return "rivian";
@@ -212,12 +245,12 @@
     }
 
     function convertToTeslaPartCode(text) {
-        const lastTen = text.slice(-10);
-        const partNumber = lastTen.slice(0, 7);
-        const suffix = lastTen.slice(7, 9);
-        const revision = lastTen.slice(9);
+        const partNumber = text.slice(0, 7);
+        const suffix = text.slice(7, 9);
+        const revision = text.slice(9);
         return `${partNumber}-${suffix}-${revision}`;
     }
+
 </script>
 
 </html>
