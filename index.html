@@ -100,28 +100,29 @@
 
       </nav> <!-- end #nav-wrap -->
 
-      <div class="row banner">
-         <div class="banner-text">
-            <h1 class="responsive-headline">Richard's Body Shop</h1>
-            <h3></h3>
-            <hr />
-            <ul class="social">
-               <li><a href="mailto:office@richardsbodyshop.com"><i class="fa fa-envelope"></i></a></li>
-               <li><a href="tel:7735883301"><i class="fa fa-phone"></i></a></li>
-               <li><a href="https://www.carwise.com/auto-body-shops/richards-body-shop-inc-chicago-il-60625/516282"><i
-                        class="fa fa-car"></i></a></li>
-               <li><a href="https://www.yelp.com/biz/richards-body-shop-chicago-4"><i class="fa-brands fa-yelp"></i></a>
-               </li>
-               <li><a
-                     href="https://www.bbb.org/us/il/chicago/profile/auto-body-repair-and-painting/richards-body-shop-0654-17581"><i
-                        class="fa-solid fa-b"></i></a></li>
-            </ul>
+         <div class="row banner">
+            <div class="banner-text">
+               <h1 class="responsive-headline">Richard's Body Shop</h1>
+               <h3></h3>
+               <hr />
+               <ul class="social">
+                  <li><a href="mailto:office@richardsbodyshop.com"><i class="fa fa-envelope"></i></a></li>
+                  <li><a href="tel:7735883301"><i class="fa fa-phone"></i></a></li>
+                  <li><a href="https://www.carwise.com/auto-body-shops/richards-body-shop-inc-chicago-il-60625/516282"><i
+                           class="fa fa-car"></i></a></li>
+                  <li><a href="https://www.yelp.com/biz/richards-body-shop-chicago-4"><i
+                           class="fa-brands fa-yelp"></i></a>
+                  </li>
+                  <li><a
+                        href="https://www.bbb.org/us/il/chicago/profile/auto-body-repair-and-painting/richards-body-shop-0654-17581"><i
+                           class="fa-solid fa-b"></i></a></li>
+               </ul>
+            </div>
          </div>
-      </div>
 
-      <p class="scrolldown">
-         <a class="smoothscroll" href="#status"><i class="icon-down-circle"></i></a>
-      </p>
+         <p class="scrolldown">
+            <a class="smoothscroll" href="#status"><i class="icon-down-circle"></i></a>
+         </p>
 
    </header> <!-- Header End -->
    <section id="status" style="width: 100%; background-color: #B23F44;margin:0;">
@@ -129,32 +130,37 @@
             src="https://www.carwise.com/repair-status-plugin/render?o=h&amp;size=l&amp;type=i&amp;theme=l_1"
             style="border-radius:25px;border:none;height:200px;filter:hue-rotate(145deg);border: 0;text-align: center;margin: 0;box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.4), 0 8px 20px 0 rgba(0, 0, 0, 0.4);"
             frameborder="0" scrolling="no" height="200" width="400"></iframe><br><br></center>
-            <div id="widget-container" class="CWPhotoEstimate" data-domain="https://www.carwise.com" data-rfid="516282" data-type="button" data-theme="dg_1 l1" data-size="l">
-               <a rel="nofollow" href="https://www.carwise.com/auto-body-shops/richards-body-shop-inc-chicago-il-60625/516282" target="_blank" title="Request an Estimate on carwise.com">Request an Estimate for our auto body shop on carwise.com</a> - Find our <a rel="nofollow" href="https://www.carwise.com">Auto Body Shop</a> on carwise.com
-           </div>
-           <script type="text/javascript" src="https://www.carwise.com/plugins-v2/photo-estimate-plugin/516282/resources/js/plugin.js" async></script>
-           <script>
-             // Using MutationObserver to apply styles after widget updates
-             window.onload = function() {
-               const targetNode = document.getElementById('widget-container');
-           
-               const config = { attributes: true, childList: true, subtree: true };
-           
-               const callback = function(mutationsList, observer) {
-                   for(let mutation of mutationsList) {
-                       if (mutation.type === 'childList') {
-                           targetNode.style.clipPath = 'inset(0 33.33% 0 0)';
-                           targetNode.style.overflow = 'hidden';
-                       }
-                   }
-               };
-           
-               const observer = new MutationObserver(callback);
-               observer.observe(targetNode, config);
-             };
-           </script>
-           
-            </section>
+      <div id="widget-container" class="CWPhotoEstimate" data-domain="https://www.carwise.com" data-rfid="516282"
+         data-type="button" data-theme="dg_1 l1" data-size="l">
+         <a rel="nofollow" href="https://www.carwise.com/auto-body-shops/richards-body-shop-inc-chicago-il-60625/516282"
+            target="_blank" title="Request an Estimate on carwise.com">Request an Estimate for our auto body shop on
+            carwise.com</a> - Find our <a rel="nofollow" href="https://www.carwise.com">Auto Body Shop</a> on
+         carwise.com
+      </div>
+      <script type="text/javascript"
+         src="https://www.carwise.com/plugins-v2/photo-estimate-plugin/516282/resources/js/plugin.js" async></script>
+      <script>
+         // Using MutationObserver to apply styles after widget updates
+         window.onload = function () {
+            const targetNode = document.getElementById('widget-container');
+
+            const config = { attributes: true, childList: true, subtree: true };
+
+            const callback = function (mutationsList, observer) {
+               for (let mutation of mutationsList) {
+                  if (mutation.type === 'childList') {
+                     targetNode.style.clipPath = 'inset(0 33.33% 0 0)';
+                     targetNode.style.overflow = 'hidden';
+                  }
+               }
+            };
+
+            const observer = new MutationObserver(callback);
+            observer.observe(targetNode, config);
+         };
+      </script>
+
+   </section>
    <!-- Contact Section
    ================================================== -->
    <section id="contact">
@@ -548,9 +554,7 @@
                      <div class="item-wrap">
 
                         <a href="#modal-11" title="">
-                           <img alt="Kia"
-                              src="images/logos/kia.png"
-                              loading="lazy">
+                           <img alt="Kia" src="images/logos/kia.png" loading="lazy">
                            <div class="overlay">
                               <div class="certifications-item-meta">
                                  <h5>Kia</h5>

@@ -28,7 +28,7 @@ html, body {
    max-width: 100%;
    overflow-x: hidden;
 }
-
+ 
 /* Hide scrollbar for Chrome, Safari and Opera */
 iframe::-webkit-scrollbar, .row-item::-webkit-scrollbar {
    display: none;
@@ -49,8 +49,8 @@ header {
    height: 800px;
    min-height: 500px;
    width: 100%;
-   background: linear-gradient(rgba(0, 0, 0, 0.4),
-   rgba(0, 0, 0, 0.8)), url('/images/background.webp') no-repeat top center;
+   background: linear-gradient(rgba(0, 0, 0, 0.1),
+   rgba(0, 0, 0, 0.2)), url('/video.mov') no-repeat top center;
    background-size: cover !important;
 	-webkit-background-size: cover !important;
    text-align: center;
