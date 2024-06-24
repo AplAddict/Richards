@@ -50,7 +50,7 @@ header {
    min-height: 500px;
    width: 100%;
    background: linear-gradient(rgba(0, 0, 0, 0.1),
-   rgba(0, 0, 0, 0.2)), url('/video.mov') no-repeat top center;
+   rgba(0, 0, 0, 0.2)), url('/video.mp4') no-repeat top center;
    background-size: cover !important;
 	-webkit-background-size: cover !important;
    text-align: center;
