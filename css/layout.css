@@ -54,7 +54,6 @@ iframe,
 header {
    position: relative;
    height: 100%;
-   min-height: 500px;
    width: 100%;
    background: linear-gradient(rgba(0, 0, 0, 0.1),
          rgba(0, 0, 0, 0.2)), url('images/background.webp') no-repeat top center;
@@ -65,8 +64,7 @@ header {
    margin: 0;
    padding: 0;
    will-change: transform;
-   /* Hint to the browser */
-   transition: transform 0.1s ease-out;
+   /* Hint to the browser */\
    /* Optional: Add a small */
 }
 
