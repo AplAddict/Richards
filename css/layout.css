@@ -84,6 +84,7 @@ header .banner {
    width: 85%;
    padding-bottom: 30px;
    text-align: center;
+   z-index: 1;
 }
 
 header .banner-text { width: 100%; }
