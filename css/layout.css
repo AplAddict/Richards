@@ -130,11 +130,9 @@ header .social li a:hover { color: #b01111; }
 
 /* scrolldown link */
 header .scrolldown a {
-   display: inline-block;
-   text-align: center;
+   position: absolute;
    bottom: 30px;
    left: 50%;
-   margin-left: -29px;
    color: #fff;
    display: block;
    height: 42px;
@@ -143,12 +141,14 @@ header .scrolldown a {
    line-height: 42px;
    color: #fff;
    border-radius: 100%;
-   z-index: 2;
-
    -webkit-transition: all .3s ease-in-out;
    -moz-transition: all .3s ease-in-out;
    -o-transition: all .3s ease-in-out;
    transition: all .3s ease-in-out;
+
+   -webkit-transform: translate(-50%, -50%);
+   -ms-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
 }
 header .scrolldown a:hover { color: #b01111; }
 
