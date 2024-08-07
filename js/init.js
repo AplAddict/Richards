@@ -216,3 +216,12 @@ function showSlides(n) {
    }
    slides[slideIndex - 1].style.display = "block";
 }
+
+/*----------------------------------------------------*/
+/*	Loading
+------------------------------------------------------*/
+
+$(window).on("load",function(){
+   $("#back").fadeOut("slow");
+   $("#content").fadeIn("slow");
+});

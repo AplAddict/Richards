@@ -76,749 +76,753 @@
 </head>
 
 <body>
-
-   <!-- Header
+   <div id="back"><div id="loader"></div></div>
+      <!-- Header
    ================================================== -->
-   <header id="home">
-      <video playsinline autoplay muted loop id="video-background">
-         <source src="/video.mp4" type="video/mp4">
-         Your browser does not support the video tag.
-      </video>
-
-      <nav id="nav-wrap">
-
-         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-         <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
-
-         <ul id="nav" class="nav">
-            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
-            <li><a class="smoothscroll" href="#status">Repair Status</a></li>
-            <li><a class="smoothscroll" href="#contact">Contact</a></li>
-            <li><a class="smoothscroll" href="#reviews">Reviews</a></li>
-            <li><a class="smoothscroll" href="#certifications">Certifications</a></li>
-            <li><a class="smoothscroll" href="#documents">Documents</a></li>
-            <li><a target="_blank"
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSec2MLY-TuIQmBEv-Sh_1knqGM7O6G-fWmqW6mdD4KeI0L9Qg/viewform?usp=sf_link">Jobs</a>
-            </li>
-         </ul> <!-- end #nav -->
-
-      </nav> <!-- end #nav-wrap -->
-
-      <div class="banner-text">
-         <h1 class="responsive-headline">Richard's Body Shop</h1>
-         <h3></h3>
-         <hr />
-         <ul class="social">
-            <li><a href="mailto:office@richardsbodyshop.com"><i class="fa fa-envelope"></i></a></li>
-            <li><a href="tel:7735883301"><i class="fa fa-phone"></i></a></li>
-            <li><a href="https://www.carwise.com/auto-body-shops/richards-body-shop-inc-chicago-il-60625/516282"><i
-                     class="fa fa-car"></i></a></li>
-            <li><a
-                  href="https://www.google.com/maps/place/Richard's+Body+Shop/@41.9685997,-87.7045147,17z/data=!4m8!3m7!1s0x880fcdfafc7a2747:0xe10fe7f20741292a!8m2!3d41.9685997!4d-87.7045147!9m1!1b1!16s%2Fg%2F1tfczdrx?entry=ttu"><i
-                     class="fa-brands fa-google"></i></a>
-            </li>
-         </ul>
-      </div>
-      <span class="scrolldown">
-         <a class="smoothscroll" href="#status"><i class="icon-down-circle"></i></a>
-      </span>
-   </header> <!-- Header End -->
-   <section id="status" style="width: 100%; background-color: #B23F44;margin:0;">
-      <center><br><iframe
-            src="https://www.carwise.com/repair-status-plugin/render?o=h&amp;size=l&amp;type=i&amp;theme=l_1"
-            style="border-radius:25px;border:none;height:200px;filter:hue-rotate(145deg);border: 0;text-align: center;margin: 0;box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.4), 0 8px 20px 0 rgba(0, 0, 0, 0.4);"
-            frameborder="0" scrolling="no" height="200" width="400"></iframe><br><br></center>
-      <div id="widget-container" class="CWPhotoEstimate" data-domain="https://www.carwise.com" data-rfid="516282"
-         data-type="button" data-theme="dg_1 l1" data-size="l">
-         <a rel="nofollow" href="https://www.carwise.com/auto-body-shops/richards-body-shop-inc-chicago-il-60625/516282"
-            target="_blank" title="Request an Estimate on carwise.com">Request an Estimate for our auto body shop on
-            carwise.com</a> - Find our <a rel="nofollow" href="https://www.carwise.com">Auto Body Shop</a> on
-         carwise.com
-      </div>
-      <script type="text/javascript"
-         src="https://www.carwise.com/plugins-v2/photo-estimate-plugin/516282/resources/js/plugin.js" async></script>
-      <script>
-         // Using MutationObserver to apply styles after widget updates
-         window.onload = function () {
-            const targetNode = document.getElementById('widget-container');
-
-            const config = { attributes: true, childList: true, subtree: true };
-
-            const callback = function (mutationsList, observer) {
-               for (let mutation of mutationsList) {
-                  if (mutation.type === 'childList') {
-                     targetNode.style.clipPath = 'inset(0 33.33% 0 0)';
-                     targetNode.style.overflow = 'hidden';
-                  }
-               }
-            };
-
-            const observer = new MutationObserver(callback);
-            observer.observe(targetNode, config);
-         };
-      </script>
-
-   </section>
-   <!-- Contact Section
-   ================================================== -->
-   <section id="contact">
-
-      <div class="row">
-
-         <div class="three columns">
-
-            <img class="profile-pic" src="images/me.png" alt="Richard's Body Shop Logo" />
-
-         </div>
-
-         <div class="nine columns main-col">
-            <div class="row">
-
-               <div class="columns contact-details">
-
-                  <h2>Contact Details</h2>
-                  <p class="address">
-                     <span>Richard's Body Shop</span><br>
-                     <span>3030 W Lawrence Ave<br>
-                        Chicago, IL 60625 US
-                     </span><br>
-                     <a href="tel:7735883301"><span>(773)-588-3301</span></a><br>
-                     <a href="mailto:office@richardsbodyshop.com"><span>office@richardsbodyshop.com</span></a>
-                  </p>
-
-               </div>
-
-               <div class="columns download">
-                  <div class="mapouter">
-                     <div class="gmap_canvas"><iframe class="gmap_iframe" frameborder="0" scrolling="no"
-                           marginheight="0" marginwidth="0"
-                           src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=3030 w Lawrence&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a
-                           href="https://embed-googlemap.com">embed-googlemap.com</a></div>
-                     <style>
-                        .mapouter {
-                           position: relative;
-                           text-align: right;
-                           width: 400px;
-                           max-width: 100%;
-                           height: 200px;
-                           margin-top: -10px;
-                        }
-
-                        .gmap_canvas {
-                           overflow: hidden;
-                           background: none !important;
-                           width: 400px;
-                           max-width: 100%;
-                           height: 200px;
-                        }
-
-                        .gmap_iframe {
-                           width: 400px !important;
-                           max-width: 100% !important;
-                           height: 200px !important;
-                        }
-                     </style>
-
-                  </div>
-               </div>
-
-            </div> <!-- end row -->
-
-         </div> <!-- end .main-col -->
-         <br><br>
-         <p style="margin-left: 25px; margin-right: 25px;">
-            Determined to make our customer’s experience a pleasant one. Our quality and high-tech repairs are provided
-            with a professional and incisive service. Richard’s Body Shop is devoted to going beyond and surpassing our
-            customers’ expectations. We strive to be the best in every aspect of the industry. We feel our shop is an
-            extension of ourselves; thus, we strive to have outstanding leadership, negotiation, customer service, and
-            communication skills. As a family business, we consider our employees part of our family, and that is why
-            our relationships with our employees, customers, and insurance companies are so important to us.
-
-
-            <!-- Gallery Section
-   ================================================== -->
-            <center>
-               <div class="row, row1">
-                  <div class="column">
-                     <img src="/images/gallery/newbuilding.webp" style="width:100%" loading="lazy"
-                        alt="The storefront of our new building!">
-                     <img src="/images/gallery/driveway.webp" style="width:100%" loading="lazy"
-                        alt="Brick driveway with a Tesla on it">
-                     <img src="/images/gallery/mechanic.webp" style="width:100%" loading="lazy"
-                        alt="Mechanic shop storefront">
-                  </div>
-                  <div class="column">
-                     <img src="/images/gallery/stairs.jpg" style="width:100%" loading="lazy"
-                        alt="Ballroom style stairs and balcony in showroom">
-                     <img src="/images/gallery/oldcar.jpg" style="width:100%" loading="lazy"
-                        alt="Antique car in showroom">
-                     <img src="/images/gallery/front.jpg" style="width:100%" loading="lazy"
-                        alt="Ornate architecture of showroom entrance">
-                  </div>
-                  <div class="column">
-                     <img src="/images/gallery/storefront.webp" style="width:100%" loading="lazy"
-                        alt="Retro Richard's sign">
-                     <img src="/images/gallery/spraybooth.webp" style="width:100%" loading="lazy"
-                        alt="Brand new pair of Spanesi spray booths">
-                  </div>
-               </div>
-            </center>
-         <div class="slideshow-container row" style="margin-left: 25px; margin-right: 25px;">
-            <img class="mySlides fade" src="/images/gallery/newbuilding.webp" style="width:100%" loading="lazy"
-               alt="The storefront of our new building!">
-            <img class="mySlides fade" src="/images/gallery/driveway.webp" style="width:100%" loading="lazy"
-               alt="Brick driveway with a Tesla on it">
-            <img class="mySlides fade" src="/images/gallery/mechanic.webp" style="width:100%" loading="lazy"
-               alt="Mechanic shop storefront">
-            <img class="mySlides fade" src="/images/gallery/stairs.jpg" style="width:100%" loading="lazy"
-               alt="Ballroom style stairs and balcony in showroom">
-            <img class="mySlides fade" src="/images/gallery/oldcar.jpg" style="width:100%" loading="lazy"
-               alt="Antique car in showroom">
-            <img class="mySlides fade" src="/images/gallery/front.jpg" style="width:100%" loading="lazy"
-               alt="Ornate architecture of showroom entrance">
-            <img class="mySlides fade" src="/images/gallery/storefront.webp" style="width:100%" loading="lazy"
-               alt="Retro Richard's sign" <img class="mySlides fade" src="/images/gallery/spraybooth.webp"
-               style="width:100%" loading="lazy" alt="Brand new pair of Spanesi spray booths">
-
-            <a class="prev" onclick="plusSlides(-1)">❮</a>
-            <a class="next" onclick="plusSlides(1)">❯</a>
-         </div>
-         </p>
-      </div>
-      <style>
-         * {
-            box-sizing: border-box;
-         }
-
-         .row1 {
-            display: -ms-flexbox;
-            /* IE10 */
-            display: flex;
-            -ms-flex-wrap: wrap;
-            /* IE10 */
-            flex-wrap: wrap;
-            padding: 0px 4px;
-            margin-left: 25px;
-            margin-right: 25px;
-            background-color: #191919;
-         }
-
-         /* Create four equal columns that sits next to each other */
-         .column {
-            -ms-flex: 33.33%;
-            /* IE10 */
-            flex: 33.33%;
-            max-width: 33.33%;
-            padding: 0 4px;
-         }
-
-         .column img {
-            margin-top: 8px;
-            vertical-align: middle;
-            width: 100%;
-         }
-
-         /* Responsive layout - makes a two column-layout instead of four columns */
-         @media screen and (max-width: 800px) {
-            .column {
-               -ms-flex: 50%;
-               flex: 50%;
-               max-width: 50%;
-            }
-
-            .reviewObject {
-               width: 85vw !important;
-               margin-left: 25px;
-               margin-right: 25px;
-            }
-
-            .row1 {
-               display: none;
-            }
-
-            .slideshow-container {
-               display: block;
-            }
-         }
-
-         /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-         @media screen and (max-width: 600px) {
-            .column {
-               -ms-flex: 100%;
-               flex: 100%;
-               max-width: 100%;
-            }
-
-            .row1 {
-               display: none;
-            }
-         }
-      </style>
-   </section> <!-- contact Section End-->
-
-   <!-- Reviews Section
-   ================================================== -->
-   <section id="reviews" style="background-color: #B23F44;"><br>
-      <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-      <center>
-         <div style="background-color: transparent; position:relative; z-index: 10;"
-            class="elfsight-app-cc40ddfe-d55f-4337-9db0-25c1656dd753 row reviewObject"></div><br>
-         <img src="images/IMG_8434.webp" style="position:relative; margin-top: -15vh;z-index: 1000;" loading="lazy"
-            alt="Teslas on Richard's brick driveway">
-      </center>
-   </section>
-
-   <!-- Certifications Section
-   ================================================== -->
-   <section id="certifications">
-
-      <div class="row">
-
-         <div class="twelve columns collapsed">
-
-            <h1>Certifications</h1>
-
-            <!-- certifications-wrapper -->
-            <div id="certifications-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
-               <div class="row">
-                  <div class="columns certifications-item">
-                     <div class="item-wrap">
-
-                        <a href="#modal-01" title="">
-                           <img alt="Tesla Logo" src="/images/logos/tesla.png" loading="lazy">
-                           <div class="overlay">
-                              <div class="certifications-item-meta">
-                                 <h5>Tesla</h5>
-                              </div>
-                           </div>
-                           <div class="link-icon"><i class="icon-plus"></i></div>
-                        </a>
-
-                     </div>
-                  </div>
-
-                  <div class="columns certifications-item">
-                     <div class="item-wrap">
-
-                        <a href="#modal-02" title="">
-                           <img alt="Rivian Logo"
-                              src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcoalitionforfuturemobility.com%2Fwp-content%2Fuploads%2F2020%2F11%2Frivian-logo-full-color-1.png&f=1&nofb=1&ipt=40db8ff7dfdda29df023a2c9b95f01d60e8e715bb5b444a0638a87942c597a83&ipo=images"
-                              loading="lazy">
-                           <div class="overlay">
-                              <div class="certifications-item-meta">
-                                 <h5>Rivian</h5>
-                              </div>
-                           </div>
-                           <div class="link-icon"><i class="icon-plus"></i></div>
-                        </a>
-
-                     </div>
-                  </div>
-
-                  <div class="columns certifications-item">
-                     <div class="item-wrap">
-
-                        <a href="#modal-03" title="">
-                           <img alt="MOPAR Certified Logo" src="images/logos/mopar.png" loading="lazy">
-                           <div class="overlay">
-                              <div class="certifications-item-meta">
-                                 <h5>MOPAR</h5>
-                              </div>
-                           </div>
-                           <div class="link-icon"><i class="icon-plus"></i></div>
-                        </a>
-
-                     </div>
-                  </div>
-
-                  <div class="columns certifications-item">
-                     <div class="item-wrap">
-
-                        <a href="#modal-04" title="">
-                           <img alt="Infinit Certified Logo" style="max-width:fit-content;max-height: fit-content;"
-                              src="images/logos/infiniti.png" loading="lazy">
-                           <div class="overlay">
-                              <div class="certifications-item-meta">
-                                 <h5>Infiniti</h5>
-                              </div>
-                           </div>
-                           <div class="link-icon"><i class="icon-plus"></i></div>
-                        </a>
-
-                     </div>
-                  </div>
-               </div>
-
-               <div id="collapse-content" class="row">
-                  <div class="columns certifications-item">
-                     <div class="item-wrap">
-
-                        <a href="#modal-05" title="">
-                           <img alt="Hyundai Logo" src="images/logos/Hyundai.png" loading="lazy">
-                           <div class="overlay">
-                              <div class="certifications-item-meta">
-                                 <h5>Hyundai</h5>
-                              </div>
-                           </div>
-                           <div class="link-icon"><i class="icon-plus"></i></div>
-                        </a>
-
-                     </div>
-                  </div>
-
-                  <div class="columns certifications-item">
-                     <div class="item-wrap">
-
-                        <a href="#modal-06" title="">
-                           <img alt="Land Rover Logo" src="images/logos/landrover.png" loading="lazy">
-                           <div class="overlay">
-                              <div class="certifications-item-meta">
-                                 <h5>Land Rover</h5>
-                              </div>
-                           </div>
-                           <div class="link-icon"><i class="icon-plus"></i></div>
-                        </a>
-
-                     </div>
-                  </div>
-
-                  <div class="columns certifications-item">
-                     <div class="item-wrap">
-
-                        <a href="#modal-07" title="">
-                           <img alt="Nissan Certified Logo" src="images/logos/nissan.png" loading="lazy">
-                           <div class="overlay">
-                              <div class="certifications-item-meta">
-                                 <h5>Nissan</h5>
-                              </div>
-                           </div>
-                           <div class="link-icon"><i class="icon-plus"></i></div>
-                        </a>
-
-                     </div>
-                  </div>
-
-                  <div class="columns certifications-item">
-                     <div class="item-wrap">
-
-                        <a href="#modal-08" title="">
-                           <img alt="Subaru Certified Logo" src="images/logos/subaru.png" loading="lazy">
-                           <div class="overlay">
-                              <div class="certifications-item-meta">
-                                 <h5>Subaru</h5>
-                              </div>
-                           </div>
-                           <div class="link-icon"><i class="icon-plus"></i></div>
-                        </a>
-
-                     </div>
-                  </div>
-
-                  <div class="columns certifications-item">
-                     <div class="item-wrap">
-
-                        <a href="#modal-09" title="">
-                           <img alt="ICar Gold Class Logo" src="images/logos/icar.png" loading="lazy">
-                           <div class="overlay">
-                              <div class="certifications-item-meta">
-                                 <h5>ICar Gold Class</h5>
-                              </div>
-                           </div>
-                           <div class="link-icon"><i class="icon-plus"></i></div>
-                        </a>
-
-                     </div>
-                  </div>
-
-                  <div class="columns certifications-item">
-                     <div class="item-wrap">
-
-                        <a href="#modal-10" title="">
-                           <img alt="Certified Assured Performance Logo"
-                              src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs19525.pcdn.co%2Fwp-content%2Fuploads%2F2017%2F02%2FAssured-Performance.jpg&f=1&nofb=1&ipt=749d5911a3a61c5398cbc5b925ce4a74111c87cd96aa5674ed22c05de23cd5b8&ipo=images"
-                              loading="lazy">
-                           <div class="overlay">
-                              <div class="certifications-item-meta">
-                                 <h5>Assured Performance</h5>
-                              </div>
-                           </div>
-                           <div class="link-icon"><i class="icon-plus"></i></div>
-                        </a>
-
-                     </div>
-                  </div>
-
-                  <div class="columns certifications-item">
-                     <div class="item-wrap">
-
-                        <a href="#modal-11" title="">
-                           <img alt="Kia" src="images/logos/kia.png" loading="lazy">
-                           <div class="overlay">
-                              <div class="certifications-item-meta">
-                                 <h5>Kia</h5>
-                              </div>
-                           </div>
-                           <div class="link-icon"><i class="icon-plus"></i></div>
-                        </a>
-
-                     </div>
-                  </div>
-
-               </div>
-
-            </div> <!-- certifications-wrapper end -->
-
-         </div> <!-- twelve columns end -->
-
-         <h1 onclick="collapse()">View <span id="moreless">more</span> of our certifications.</h1>
-
-         <!-- Modal Popup
-	      --------------------------------------------------------------- -->
-
-         <div id="modal-01" class="popup-modal mfp-hide">
-
-            <img class="scale-with-grid" src="images/logos/tesla.png" loading="lazy" alt="Tesla Logo" />
-
-            <div class="description-box">
-               <h4>Tesla</h4>
-               <p></p>
-               <span class="categories"><i class="fa fa-tag"></i></span>
-            </div>
-
-            <div class="link-box">
-               <a href="#" target="_blank">Details</a>
-               <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-         </div><!-- modal-01 End -->
-
-         <div id="modal-02" class="popup-modal mfp-hide">
-
-            <img class="scale-with-grid"
-               src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcoalitionforfuturemobility.com%2Fwp-content%2Fuploads%2F2020%2F11%2Frivian-logo-full-color-1.png&f=1&nofb=1&ipt=40db8ff7dfdda29df023a2c9b95f01d60e8e715bb5b444a0638a87942c597a83&ipo=images"
-               loading="lazy" alt="Rivian Logo" />
-
-            <div class="description-box">
-               <h4>Rivian</h4>
-               <p></p>
-               <span class="categories"><i class="fa fa-tag"></i></span>
-            </div>
-
-            <div class="link-box">
-               <a href="#" target="_blank">Details</a>
-               <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-         </div><!-- modal-02 End -->
-
-         <div id="modal-03" class="popup-modal mfp-hide">
-
-            <img class="scale-with-grid" src="images/logos/mopar.png" loading="lazy" alt="MOPAR Certified Logo" />
-
-            <div class="description-box">
-               <h4>MOPAR</h4>
-               <p></p>
-               <span class="categories"><i class="fa fa-tag"></i></span>
-            </div>
-
-            <div class="link-box">
-               <a href="#" target="_blank">Details</a>
-               <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-         </div><!-- modal-03 End -->
-
-         <div id="modal-04" class="popup-modal mfp-hide">
-
-            <img class="scale-with-grid" src="images/logos/infiniti.png" alt="Infiniti Certified Logo" loading="lazy" />
-
-            <div class="description-box">
-               <h4>Infiniti</h4>
-               <p></p>
-               <span class="categories"><i class="fa fa-tag"></i></span>
-            </div>
-
-            <div class="link-box">
-               <a href="#" target="_blank">Details</a>
-               <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-         </div><!-- modal-04 End -->
-
-         <div id="modal-05" class="popup-modal mfp-hide">
-
-            <img class="scale-with-grid" src="images/logos/Hyundai.png" loading="lazy" alt="Hyundai Logo" />
-
-            <div class="description-box">
-               <h4>Hyundai</h4>
-               <p></p>
-               <span class="categories"><i class="fa fa-tag"></i></span>
-            </div>
-
-            <div class="link-box">
-               <a href="#" target="_blank">Details</a>
-               <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-         </div><!-- modal-05 End --> -->
-
-         <div id="modal-06" class="popup-modal mfp-hide">
-
-            <img class="scale-with-grid" src="images/logos/landrover.png" loading="lazy" alt="Land Rover Logo" />
-
-            <div class="description-box">
-               <h4>Land Rover</h4>
-               <p></p>
-               <span class="categories"><i class="fa fa-tag"></i></span>
-            </div>
-
-            <div class="link-box">
-               <a href="#" target="_blank">Details</a>
-               <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-         </div><!-- modal-06 End -->
-
-         <div id="modal-07" class="popup-modal mfp-hide">
-
-            <img class="scale-with-grid" src="images/logos/nissan.png" loading="lazy" alt="Nissan Certified Logo" />
-
-            <div class="description-box">
-               <h4>Nissan</h4>
-               <p></p>
-               <span class="categories"><i class="fa fa-tag"></i></span>
-            </div>
-
-            <div class="link-box">
-               <a href="#" target="_blank">Details</a>
-               <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-         </div><!-- modal-07 End -->
-
-         <div id="modal-08" class="popup-modal mfp-hide">
-
-            <img class="scale-with-grid" src="images/logos/subaru.png" loading="lazy" alt="Subaru Certified Logo" />
-
-            <div class="description-box">
-               <h4>Subaru</h4>
-               <p></p>
-               <span class="categories"><i class="fa fa-tag"></i></span>
-            </div>
-
-            <div class="link-box">
-               <a href="#" target="_blank">Details</a>
-               <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-         </div><!-- modal-08 End -->
-
-         <div id="modal-09" class="popup-modal mfp-hide">
-
-            <img class="scale-with-grid" src="images/logos/icar.png" loading="lazy" alt="ICar Gold Class Logo" />
-
-            <div class="description-box">
-               <h4>ICar Gold Class</h4>
-               <p></p>
-               <span class="categories"><i class="fa fa-tag"></i></span>
-            </div>
-
-            <div class="link-box">
-               <a href="#" target="_blank">Details</a>
-               <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-         </div><!-- modal-09 End -->
-
-         <div id="modal-10" class="popup-modal mfp-hide">
-
-            <img class="scale-with-grid"
-               src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs19525.pcdn.co%2Fwp-content%2Fuploads%2F2017%2F02%2FAssured-Performance.jpg&f=1&nofb=1&ipt=749d5911a3a61c5398cbc5b925ce4a74111c87cd96aa5674ed22c05de23cd5b8&ipo=images"
-               loading="lazy" alt="Certified Assured Performance Logo" />
-
-            <div class="description-box">
-               <h4>Assured Performance</h4>
-               <p></p>
-               <span class="categories"><i class="fa fa-tag"></i></span>
-            </div>
-
-            <div class="link-box">
-               <a href="#" target="_blank">Details</a>
-               <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-         </div><!-- modal-10 End -->
-
-         <div id="modal-11" class="popup-modal mfp-hide">
-
-            <img class="scale-with-grid" src="images/logos/kia.png" loading="lazy" alt="Kia" />
-
-            <div class="description-box">
-               <h4>Kia</h4>
-               <p></p>
-               <span class="categories"><i class="fa fa-tag"></i></span>
-            </div>
-
-            <div class="link-box">
-               <a href="#" target="_blank">Details</a>
-               <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-         </div><!-- modal-11 End -->
-
-      </div> <!-- row End -->
-
-   </section> <!-- certifications Section End-->
-   <!-- Documents Section
-   ================================================== -->
-   <section id="documents" style="margin-top: 0;">
-      <center>
-         <h1>Documents</h1>To open the document in a new tab, please <a
-            href="https://na4.docusign.net/Member/PowerFormSigning.aspx?PowerFormId=f7479078-ff01-4a06-b7f9-13b4369839c6&env=na4&acct=18d44872-eb3f-417f-b02b-126b78fca207&v=2"
-            target="_blank" rel="noopener">click here</a>
-      </center><br><br>
-      <iframe loading="lazy" style="margin: 0; width: 100%;margin-bottom:-80px"
-         src="https://na4.docusign.net/Member/PowerFormSigning.aspx?PowerFormId=f7479078-ff01-4a06-b7f9-13b4369839c6&env=na4&acct=18d44872-eb3f-417f-b02b-126b78fca207&v=2"
-         width="100%" height="860" scrolling="no" frameborder="0"></iframe>
-   </section> <!-- documents Section End-->
-
-
-   <!-- footer
-   ================================================== -->
-   <footer>
-
-      <div class="row">
-
-         <div class="twelve columns">
-
-            <ul class="social-links">
+      <header id="home">
+         <video playsinline autoplay muted loop id="video-background">
+            <source src="/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+         </video>
+
+         <nav id="nav-wrap">
+
+            <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+            <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+
+            <ul id="nav" class="nav">
+               <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
+               <li><a class="smoothscroll" href="#status">Repair Status</a></li>
+               <li><a class="smoothscroll" href="#contact">Contact</a></li>
+               <li><a class="smoothscroll" href="#reviews">Reviews</a></li>
+               <li><a class="smoothscroll" href="#certifications">Certifications</a></li>
+               <li><a class="smoothscroll" href="#documents">Documents</a></li>
+               <li><a target="_blank"
+                     href="https://docs.google.com/forms/d/e/1FAIpQLSec2MLY-TuIQmBEv-Sh_1knqGM7O6G-fWmqW6mdD4KeI0L9Qg/viewform?usp=sf_link">Jobs</a>
+               </li>
+            </ul> <!-- end #nav -->
+
+         </nav> <!-- end #nav-wrap -->
+
+         <div class="banner-text">
+            <h1 class="responsive-headline">Richard's Body Shop</h1>
+            <h3></h3>
+            <hr />
+            <ul class="social">
                <li><a href="mailto:office@richardsbodyshop.com"><i class="fa fa-envelope"></i></a></li>
                <li><a href="tel:7735883301"><i class="fa fa-phone"></i></a></li>
                <li><a href="https://www.carwise.com/auto-body-shops/richards-body-shop-inc-chicago-il-60625/516282"><i
                         class="fa fa-car"></i></a></li>
-               <li><a href="https://www.yelp.com/biz/richards-body-shop-chicago-4"><i class="fa-brands fa-yelp"></i></a>
-               </li>
                <li><a
-                     href="https://www.bbb.org/us/il/chicago/profile/auto-body-repair-and-painting/richards-body-shop-0654-17581"><i
-                        class="fa-solid fa-b"></i></a></li>
+                     href="https://www.google.com/maps/place/Richard's+Body+Shop/@41.9685997,-87.7045147,17z/data=!4m8!3m7!1s0x880fcdfafc7a2747:0xe10fe7f20741292a!8m2!3d41.9685997!4d-87.7045147!9m1!1b1!16s%2Fg%2F1tfczdrx?entry=ttu"><i
+                        class="fa-brands fa-google"></i></a>
+               </li>
             </ul>
          </div>
-      </div>
-      <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a>
-      </div>
+         <span class="scrolldown">
+            <a class="smoothscroll" href="#status"><i class="icon-down-circle"></i></a>
+         </span>
+      </header> <!-- Header End -->
+      <section id="status" style="width: 100%; background-color: #B23F44;margin:0;">
+         <center><br><iframe
+               src="https://www.carwise.com/repair-status-plugin/render?o=h&amp;size=l&amp;type=i&amp;theme=l_1"
+               style="border-radius:25px;border:none;height:200px;filter:hue-rotate(145deg);border: 0;text-align: center;margin: 0;box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.4), 0 8px 20px 0 rgba(0, 0, 0, 0.4);"
+               frameborder="0" scrolling="no" height="200" width="400"></iframe><br><br></center>
+         <div id="widget-container" class="CWPhotoEstimate" data-domain="https://www.carwise.com" data-rfid="516282"
+            data-type="button" data-theme="dg_1 l1" data-size="l">
+            <a rel="nofollow"
+               href="https://www.carwise.com/auto-body-shops/richards-body-shop-inc-chicago-il-60625/516282"
+               target="_blank" title="Request an Estimate on carwise.com">Request an Estimate for our auto body shop on
+               carwise.com</a> - Find our <a rel="nofollow" href="https://www.carwise.com">Auto Body Shop</a> on
+            carwise.com
+         </div>
+         <script type="text/javascript"
+            src="https://www.carwise.com/plugins-v2/photo-estimate-plugin/516282/resources/js/plugin.js" async></script>
+         <script>
+            // Using MutationObserver to apply styles after widget updates
+            window.onload = function () {
+               const targetNode = document.getElementById('widget-container');
 
-      </div>
+               const config = { attributes: true, childList: true, subtree: true };
 
-      <!-- Java Script
+               const callback = function (mutationsList, observer) {
+                  for (let mutation of mutationsList) {
+                     if (mutation.type === 'childList') {
+                        targetNode.style.clipPath = 'inset(0 33.33% 0 0)';
+                        targetNode.style.overflow = 'hidden';
+                     }
+                  }
+               };
+
+               const observer = new MutationObserver(callback);
+               observer.observe(targetNode, config);
+            };
+         </script>
+
+      </section>
+      <!-- Contact Section
    ================================================== -->
-      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-      <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-      <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-      <script src="js/jquery.flexslider.js"></script>
-      <script src="js/waypoints.js"></script>
-      <script src="js/jquery.fittext.js"></script>
-      <script src="js/magnific-popup.js"></script>
-      <script src="js/init.js"></script>
+      <section id="contact">
+
+         <div class="row">
+
+            <div class="three columns">
+
+               <img class="profile-pic" src="images/me.png" alt="Richard's Body Shop Logo" />
+
+            </div>
+
+            <div class="nine columns main-col">
+               <div class="row">
+
+                  <div class="columns contact-details">
+
+                     <h2>Contact Details</h2>
+                     <p class="address">
+                        <span>Richard's Body Shop</span><br>
+                        <span>3030 W Lawrence Ave<br>
+                           Chicago, IL 60625 US
+                        </span><br>
+                        <a href="tel:7735883301"><span>(773)-588-3301</span></a><br>
+                        <a href="mailto:office@richardsbodyshop.com"><span>office@richardsbodyshop.com</span></a>
+                     </p>
+
+                  </div>
+
+                  <div class="columns download">
+                     <div class="mapouter">
+                        <div class="gmap_canvas"><iframe class="gmap_iframe" frameborder="0" scrolling="no"
+                              marginheight="0" marginwidth="0"
+                              src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=3030 w Lawrence&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a
+                              href="https://embed-googlemap.com">embed-googlemap.com</a></div>
+                        <style>
+                           .mapouter {
+                              position: relative;
+                              text-align: right;
+                              width: 400px;
+                              max-width: 100%;
+                              height: 200px;
+                              margin-top: -10px;
+                           }
+
+                           .gmap_canvas {
+                              overflow: hidden;
+                              background: none !important;
+                              width: 400px;
+                              max-width: 100%;
+                              height: 200px;
+                           }
+
+                           .gmap_iframe {
+                              width: 400px !important;
+                              max-width: 100% !important;
+                              height: 200px !important;
+                           }
+                        </style>
+
+                     </div>
+                  </div>
+
+               </div> <!-- end row -->
+
+            </div> <!-- end .main-col -->
+            <br><br>
+            <p style="margin-left: 25px; margin-right: 25px;">
+               Determined to make our customer’s experience a pleasant one. Our quality and high-tech repairs are
+               provided
+               with a professional and incisive service. Richard’s Body Shop is devoted to going beyond and surpassing
+               our
+               customers’ expectations. We strive to be the best in every aspect of the industry. We feel our shop is an
+               extension of ourselves; thus, we strive to have outstanding leadership, negotiation, customer service,
+               and
+               communication skills. As a family business, we consider our employees part of our family, and that is why
+               our relationships with our employees, customers, and insurance companies are so important to us.
+
+
+               <!-- Gallery Section
+   ================================================== -->
+               <center>
+                  <div class="row, row1">
+                     <div class="column">
+                        <img src="/images/gallery/newbuilding.webp" style="width:100%" loading="lazy"
+                           alt="The storefront of our new building!">
+                        <img src="/images/gallery/driveway.webp" style="width:100%" loading="lazy"
+                           alt="Brick driveway with a Tesla on it">
+                        <img src="/images/gallery/mechanic.webp" style="width:100%" loading="lazy"
+                           alt="Mechanic shop storefront">
+                     </div>
+                     <div class="column">
+                        <img src="/images/gallery/stairs.jpg" style="width:100%" loading="lazy"
+                           alt="Ballroom style stairs and balcony in showroom">
+                        <img src="/images/gallery/oldcar.jpg" style="width:100%" loading="lazy"
+                           alt="Antique car in showroom">
+                        <img src="/images/gallery/front.jpg" style="width:100%" loading="lazy"
+                           alt="Ornate architecture of showroom entrance">
+                     </div>
+                     <div class="column">
+                        <img src="/images/gallery/storefront.webp" style="width:100%" loading="lazy"
+                           alt="Retro Richard's sign">
+                        <img src="/images/gallery/spraybooth.webp" style="width:100%" loading="lazy"
+                           alt="Brand new pair of Spanesi spray booths">
+                     </div>
+                  </div>
+               </center>
+            <div class="slideshow-container row" style="margin-left: 25px; margin-right: 25px;">
+               <img class="mySlides fade" src="/images/gallery/newbuilding.webp" style="width:100%" loading="lazy"
+                  alt="The storefront of our new building!">
+               <img class="mySlides fade" src="/images/gallery/driveway.webp" style="width:100%" loading="lazy"
+                  alt="Brick driveway with a Tesla on it">
+               <img class="mySlides fade" src="/images/gallery/mechanic.webp" style="width:100%" loading="lazy"
+                  alt="Mechanic shop storefront">
+               <img class="mySlides fade" src="/images/gallery/stairs.jpg" style="width:100%" loading="lazy"
+                  alt="Ballroom style stairs and balcony in showroom">
+               <img class="mySlides fade" src="/images/gallery/oldcar.jpg" style="width:100%" loading="lazy"
+                  alt="Antique car in showroom">
+               <img class="mySlides fade" src="/images/gallery/front.jpg" style="width:100%" loading="lazy"
+                  alt="Ornate architecture of showroom entrance">
+               <img class="mySlides fade" src="/images/gallery/storefront.webp" style="width:100%" loading="lazy"
+                  alt="Retro Richard's sign" <img class="mySlides fade" src="/images/gallery/spraybooth.webp"
+                  style="width:100%" loading="lazy" alt="Brand new pair of Spanesi spray booths">
+
+               <a class="prev" onclick="plusSlides(-1)">❮</a>
+               <a class="next" onclick="plusSlides(1)">❯</a>
+            </div>
+            </p>
+         </div>
+         <style>
+            * {
+               box-sizing: border-box;
+            }
+
+            .row1 {
+               display: -ms-flexbox;
+               /* IE10 */
+               display: flex;
+               -ms-flex-wrap: wrap;
+               /* IE10 */
+               flex-wrap: wrap;
+               padding: 0px 4px;
+               margin-left: 25px;
+               margin-right: 25px;
+               background-color: #191919;
+            }
+
+            /* Create four equal columns that sits next to each other */
+            .column {
+               -ms-flex: 33.33%;
+               /* IE10 */
+               flex: 33.33%;
+               max-width: 33.33%;
+               padding: 0 4px;
+            }
+
+            .column img {
+               margin-top: 8px;
+               vertical-align: middle;
+               width: 100%;
+            }
+
+            /* Responsive layout - makes a two column-layout instead of four columns */
+            @media screen and (max-width: 800px) {
+               .column {
+                  -ms-flex: 50%;
+                  flex: 50%;
+                  max-width: 50%;
+               }
+
+               .reviewObject {
+                  width: 85vw !important;
+                  margin-left: 25px;
+                  margin-right: 25px;
+               }
+
+               .row1 {
+                  display: none;
+               }
+
+               .slideshow-container {
+                  display: block;
+               }
+            }
+
+            /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 600px) {
+               .column {
+                  -ms-flex: 100%;
+                  flex: 100%;
+                  max-width: 100%;
+               }
+
+               .row1 {
+                  display: none;
+               }
+            }
+         </style>
+      </section> <!-- contact Section End-->
+
+      <!-- Reviews Section
+   ================================================== -->
+      <section id="reviews" style="background-color: #B23F44;"><br>
+         <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+         <center>
+            <div style="background-color: transparent; position:relative; z-index: 10;"
+               class="elfsight-app-cc40ddfe-d55f-4337-9db0-25c1656dd753 row reviewObject"></div><br>
+            <img src="images/IMG_8434.webp" style="position:relative; margin-top: -15vh;z-index: 1000;" loading="lazy"
+               alt="Teslas on Richard's brick driveway">
+         </center>
+      </section>
+
+      <!-- Certifications Section
+   ================================================== -->
+      <section id="certifications">
+
+         <div class="row">
+
+            <div class="twelve columns collapsed">
+
+               <h1>Certifications</h1>
+
+               <!-- certifications-wrapper -->
+               <div id="certifications-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
+                  <div class="row">
+                     <div class="columns certifications-item">
+                        <div class="item-wrap">
+
+                           <a href="#modal-01" title="">
+                              <img alt="Tesla Logo" src="/images/logos/tesla.png" loading="lazy">
+                              <div class="overlay">
+                                 <div class="certifications-item-meta">
+                                    <h5>Tesla</h5>
+                                 </div>
+                              </div>
+                              <div class="link-icon"><i class="icon-plus"></i></div>
+                           </a>
+
+                        </div>
+                     </div>
+
+                     <div class="columns certifications-item">
+                        <div class="item-wrap">
+
+                           <a href="#modal-02" title="">
+                              <img alt="Rivian Logo"
+                                 src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcoalitionforfuturemobility.com%2Fwp-content%2Fuploads%2F2020%2F11%2Frivian-logo-full-color-1.png&f=1&nofb=1&ipt=40db8ff7dfdda29df023a2c9b95f01d60e8e715bb5b444a0638a87942c597a83&ipo=images"
+                                 loading="lazy">
+                              <div class="overlay">
+                                 <div class="certifications-item-meta">
+                                    <h5>Rivian</h5>
+                                 </div>
+                              </div>
+                              <div class="link-icon"><i class="icon-plus"></i></div>
+                           </a>
+
+                        </div>
+                     </div>
+
+                     <div class="columns certifications-item">
+                        <div class="item-wrap">
+
+                           <a href="#modal-03" title="">
+                              <img alt="MOPAR Certified Logo" src="images/logos/mopar.png" loading="lazy">
+                              <div class="overlay">
+                                 <div class="certifications-item-meta">
+                                    <h5>MOPAR</h5>
+                                 </div>
+                              </div>
+                              <div class="link-icon"><i class="icon-plus"></i></div>
+                           </a>
+
+                        </div>
+                     </div>
+
+                     <div class="columns certifications-item">
+                        <div class="item-wrap">
+
+                           <a href="#modal-04" title="">
+                              <img alt="Infinit Certified Logo" style="max-width:fit-content;max-height: fit-content;"
+                                 src="images/logos/infiniti.png" loading="lazy">
+                              <div class="overlay">
+                                 <div class="certifications-item-meta">
+                                    <h5>Infiniti</h5>
+                                 </div>
+                              </div>
+                              <div class="link-icon"><i class="icon-plus"></i></div>
+                           </a>
+
+                        </div>
+                     </div>
+                  </div>
+
+                  <div id="collapse-content" class="row">
+                     <div class="columns certifications-item">
+                        <div class="item-wrap">
+
+                           <a href="#modal-05" title="">
+                              <img alt="Hyundai Logo" src="images/logos/Hyundai.png" loading="lazy">
+                              <div class="overlay">
+                                 <div class="certifications-item-meta">
+                                    <h5>Hyundai</h5>
+                                 </div>
+                              </div>
+                              <div class="link-icon"><i class="icon-plus"></i></div>
+                           </a>
+
+                        </div>
+                     </div>
+
+                     <div class="columns certifications-item">
+                        <div class="item-wrap">
+
+                           <a href="#modal-06" title="">
+                              <img alt="Land Rover Logo" src="images/logos/landrover.png" loading="lazy">
+                              <div class="overlay">
+                                 <div class="certifications-item-meta">
+                                    <h5>Land Rover</h5>
+                                 </div>
+                              </div>
+                              <div class="link-icon"><i class="icon-plus"></i></div>
+                           </a>
+
+                        </div>
+                     </div>
+
+                     <div class="columns certifications-item">
+                        <div class="item-wrap">
+
+                           <a href="#modal-07" title="">
+                              <img alt="Nissan Certified Logo" src="images/logos/nissan.png" loading="lazy">
+                              <div class="overlay">
+                                 <div class="certifications-item-meta">
+                                    <h5>Nissan</h5>
+                                 </div>
+                              </div>
+                              <div class="link-icon"><i class="icon-plus"></i></div>
+                           </a>
+
+                        </div>
+                     </div>
+
+                     <div class="columns certifications-item">
+                        <div class="item-wrap">
+
+                           <a href="#modal-08" title="">
+                              <img alt="Subaru Certified Logo" src="images/logos/subaru.png" loading="lazy">
+                              <div class="overlay">
+                                 <div class="certifications-item-meta">
+                                    <h5>Subaru</h5>
+                                 </div>
+                              </div>
+                              <div class="link-icon"><i class="icon-plus"></i></div>
+                           </a>
+
+                        </div>
+                     </div>
+
+                     <div class="columns certifications-item">
+                        <div class="item-wrap">
+
+                           <a href="#modal-09" title="">
+                              <img alt="ICar Gold Class Logo" src="images/logos/icar.png" loading="lazy">
+                              <div class="overlay">
+                                 <div class="certifications-item-meta">
+                                    <h5>ICar Gold Class</h5>
+                                 </div>
+                              </div>
+                              <div class="link-icon"><i class="icon-plus"></i></div>
+                           </a>
+
+                        </div>
+                     </div>
+
+                     <div class="columns certifications-item">
+                        <div class="item-wrap">
+
+                           <a href="#modal-10" title="">
+                              <img alt="Certified Assured Performance Logo"
+                                 src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs19525.pcdn.co%2Fwp-content%2Fuploads%2F2017%2F02%2FAssured-Performance.jpg&f=1&nofb=1&ipt=749d5911a3a61c5398cbc5b925ce4a74111c87cd96aa5674ed22c05de23cd5b8&ipo=images"
+                                 loading="lazy">
+                              <div class="overlay">
+                                 <div class="certifications-item-meta">
+                                    <h5>Assured Performance</h5>
+                                 </div>
+                              </div>
+                              <div class="link-icon"><i class="icon-plus"></i></div>
+                           </a>
+
+                        </div>
+                     </div>
+
+                     <div class="columns certifications-item">
+                        <div class="item-wrap">
+
+                           <a href="#modal-11" title="">
+                              <img alt="Kia" src="images/logos/kia.png" loading="lazy">
+                              <div class="overlay">
+                                 <div class="certifications-item-meta">
+                                    <h5>Kia</h5>
+                                 </div>
+                              </div>
+                              <div class="link-icon"><i class="icon-plus"></i></div>
+                           </a>
+
+                        </div>
+                     </div>
+
+                  </div>
+
+               </div> <!-- certifications-wrapper end -->
+
+            </div> <!-- twelve columns end -->
+
+            <h1 onclick="collapse()">View <span id="moreless">more</span> of our certifications.</h1>
+
+            <!-- Modal Popup
+	      --------------------------------------------------------------- -->
+
+            <div id="modal-01" class="popup-modal mfp-hide">
+
+               <img class="scale-with-grid" src="images/logos/tesla.png" loading="lazy" alt="Tesla Logo" />
+
+               <div class="description-box">
+                  <h4>Tesla</h4>
+                  <p></p>
+                  <span class="categories"><i class="fa fa-tag"></i></span>
+               </div>
+
+               <div class="link-box">
+                  <a href="#" target="_blank">Details</a>
+                  <a class="popup-modal-dismiss">Close</a>
+               </div>
+
+            </div><!-- modal-01 End -->
+
+            <div id="modal-02" class="popup-modal mfp-hide">
+
+               <img class="scale-with-grid"
+                  src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcoalitionforfuturemobility.com%2Fwp-content%2Fuploads%2F2020%2F11%2Frivian-logo-full-color-1.png&f=1&nofb=1&ipt=40db8ff7dfdda29df023a2c9b95f01d60e8e715bb5b444a0638a87942c597a83&ipo=images"
+                  loading="lazy" alt="Rivian Logo" />
+
+               <div class="description-box">
+                  <h4>Rivian</h4>
+                  <p></p>
+                  <span class="categories"><i class="fa fa-tag"></i></span>
+               </div>
+
+               <div class="link-box">
+                  <a href="#" target="_blank">Details</a>
+                  <a class="popup-modal-dismiss">Close</a>
+               </div>
+
+            </div><!-- modal-02 End -->
+
+            <div id="modal-03" class="popup-modal mfp-hide">
+
+               <img class="scale-with-grid" src="images/logos/mopar.png" loading="lazy" alt="MOPAR Certified Logo" />
+
+               <div class="description-box">
+                  <h4>MOPAR</h4>
+                  <p></p>
+                  <span class="categories"><i class="fa fa-tag"></i></span>
+               </div>
+
+               <div class="link-box">
+                  <a href="#" target="_blank">Details</a>
+                  <a class="popup-modal-dismiss">Close</a>
+               </div>
+
+            </div><!-- modal-03 End -->
+
+            <div id="modal-04" class="popup-modal mfp-hide">
+
+               <img class="scale-with-grid" src="images/logos/infiniti.png" alt="Infiniti Certified Logo"
+                  loading="lazy" />
+
+               <div class="description-box">
+                  <h4>Infiniti</h4>
+                  <p></p>
+                  <span class="categories"><i class="fa fa-tag"></i></span>
+               </div>
+
+               <div class="link-box">
+                  <a href="#" target="_blank">Details</a>
+                  <a class="popup-modal-dismiss">Close</a>
+               </div>
+
+            </div><!-- modal-04 End -->
+
+            <div id="modal-05" class="popup-modal mfp-hide">
+
+               <img class="scale-with-grid" src="images/logos/Hyundai.png" loading="lazy" alt="Hyundai Logo" />
+
+               <div class="description-box">
+                  <h4>Hyundai</h4>
+                  <p></p>
+                  <span class="categories"><i class="fa fa-tag"></i></span>
+               </div>
+
+               <div class="link-box">
+                  <a href="#" target="_blank">Details</a>
+                  <a class="popup-modal-dismiss">Close</a>
+               </div>
+
+            </div><!-- modal-05 End --> -->
+
+            <div id="modal-06" class="popup-modal mfp-hide">
+
+               <img class="scale-with-grid" src="images/logos/landrover.png" loading="lazy" alt="Land Rover Logo" />
+
+               <div class="description-box">
+                  <h4>Land Rover</h4>
+                  <p></p>
+                  <span class="categories"><i class="fa fa-tag"></i></span>
+               </div>
+
+               <div class="link-box">
+                  <a href="#" target="_blank">Details</a>
+                  <a class="popup-modal-dismiss">Close</a>
+               </div>
+
+            </div><!-- modal-06 End -->
+
+            <div id="modal-07" class="popup-modal mfp-hide">
+
+               <img class="scale-with-grid" src="images/logos/nissan.png" loading="lazy" alt="Nissan Certified Logo" />
+
+               <div class="description-box">
+                  <h4>Nissan</h4>
+                  <p></p>
+                  <span class="categories"><i class="fa fa-tag"></i></span>
+               </div>
+
+               <div class="link-box">
+                  <a href="#" target="_blank">Details</a>
+                  <a class="popup-modal-dismiss">Close</a>
+               </div>
+
+            </div><!-- modal-07 End -->
+
+            <div id="modal-08" class="popup-modal mfp-hide">
+
+               <img class="scale-with-grid" src="images/logos/subaru.png" loading="lazy" alt="Subaru Certified Logo" />
+
+               <div class="description-box">
+                  <h4>Subaru</h4>
+                  <p></p>
+                  <span class="categories"><i class="fa fa-tag"></i></span>
+               </div>
+
+               <div class="link-box">
+                  <a href="#" target="_blank">Details</a>
+                  <a class="popup-modal-dismiss">Close</a>
+               </div>
+
+            </div><!-- modal-08 End -->
+
+            <div id="modal-09" class="popup-modal mfp-hide">
+
+               <img class="scale-with-grid" src="images/logos/icar.png" loading="lazy" alt="ICar Gold Class Logo" />
+
+               <div class="description-box">
+                  <h4>ICar Gold Class</h4>
+                  <p></p>
+                  <span class="categories"><i class="fa fa-tag"></i></span>
+               </div>
+
+               <div class="link-box">
+                  <a href="#" target="_blank">Details</a>
+                  <a class="popup-modal-dismiss">Close</a>
+               </div>
+
+            </div><!-- modal-09 End -->
+
+            <div id="modal-10" class="popup-modal mfp-hide">
+
+               <img class="scale-with-grid"
+                  src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs19525.pcdn.co%2Fwp-content%2Fuploads%2F2017%2F02%2FAssured-Performance.jpg&f=1&nofb=1&ipt=749d5911a3a61c5398cbc5b925ce4a74111c87cd96aa5674ed22c05de23cd5b8&ipo=images"
+                  loading="lazy" alt="Certified Assured Performance Logo" />
+
+               <div class="description-box">
+                  <h4>Assured Performance</h4>
+                  <p></p>
+                  <span class="categories"><i class="fa fa-tag"></i></span>
+               </div>
+
+               <div class="link-box">
+                  <a href="#" target="_blank">Details</a>
+                  <a class="popup-modal-dismiss">Close</a>
+               </div>
+
+            </div><!-- modal-10 End -->
+
+            <div id="modal-11" class="popup-modal mfp-hide">
+
+               <img class="scale-with-grid" src="images/logos/kia.png" loading="lazy" alt="Kia" />
+
+               <div class="description-box">
+                  <h4>Kia</h4>
+                  <p></p>
+                  <span class="categories"><i class="fa fa-tag"></i></span>
+               </div>
+
+               <div class="link-box">
+                  <a href="#" target="_blank">Details</a>
+                  <a class="popup-modal-dismiss">Close</a>
+               </div>
+
+            </div><!-- modal-11 End -->
+
+         </div> <!-- row End -->
+
+      </section> <!-- certifications Section End-->
+      <!-- Documents Section
+   ================================================== -->
+      <section id="documents" style="margin-top: 0;">
+         <center>
+            <h1>Documents</h1>To open the document in a new tab, please <a
+               href="https://na4.docusign.net/Member/PowerFormSigning.aspx?PowerFormId=f7479078-ff01-4a06-b7f9-13b4369839c6&env=na4&acct=18d44872-eb3f-417f-b02b-126b78fca207&v=2"
+               target="_blank" rel="noopener">click here</a>
+         </center><br><br>
+         <iframe loading="lazy" style="margin: 0; width: 100%;margin-bottom:-80px"
+            src="https://na4.docusign.net/Member/PowerFormSigning.aspx?PowerFormId=f7479078-ff01-4a06-b7f9-13b4369839c6&env=na4&acct=18d44872-eb3f-417f-b02b-126b78fca207&v=2"
+            width="100%" height="860" scrolling="no" frameborder="0"></iframe>
+      </section> <!-- documents Section End-->
+
+
+      <!-- footer
+   ================================================== -->
+      <footer>
+
+         <div class="row">
+
+            <div class="twelve columns">
+
+               <ul class="social-links">
+                  <li><a href="mailto:office@richardsbodyshop.com"><i class="fa fa-envelope"></i></a></li>
+                  <li><a href="tel:7735883301"><i class="fa fa-phone"></i></a></li>
+                  <li><a href="https://www.carwise.com/auto-body-shops/richards-body-shop-inc-chicago-il-60625/516282"><i
+                           class="fa fa-car"></i></a></li>
+                  <li><a href="https://www.yelp.com/biz/richards-body-shop-chicago-4"><i
+                           class="fa-brands fa-yelp"></i></a>
+                  </li>
+                  <li><a
+                        href="https://www.bbb.org/us/il/chicago/profile/auto-body-repair-and-painting/richards-body-shop-0654-17581"><i
+                           class="fa-solid fa-b"></i></a></li>
+               </ul>
+            </div>
+         </div>
+         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a>
+         </div>
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+   <script src="js/jquery.flexslider.js"></script>
+   <script src="js/waypoints.js"></script>
+   <script src="js/jquery.fittext.js"></script>
+   <script src="js/magnific-popup.js"></script>
+   <script src="js/init.js"></script>
 </body>
 
 </html>
