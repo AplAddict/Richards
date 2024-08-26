@@ -221,7 +221,20 @@ function showSlides(n) {
 /*	Loading
 ------------------------------------------------------*/
 
-$(window).on("load",function(){
+$(window).on("load", function () {
    $("#back").fadeOut("slow");
    $("#content").fadeIn("slow");
 });
+
+/*----------------------------------------------------*/
+/*	Dropoff Expand
+------------------------------------------------------*/
+
+ function expand() {
+   var content = document.getElementById("dropOffContent");
+   if (content.style.display === "none" || content.style.display === "") {
+     content.style.display = "block";
+   } else {
+     content.style.display = "none";
+   }
+ }
