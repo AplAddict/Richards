@@ -238,3 +238,11 @@ $(window).on("load", function () {
      content.style.display = "none";
    }
  }
+
+/*----------------------------------------------------*/
+/*	Alert
+------------------------------------------------------*/
+
+ function closeAlert() {
+   document.getElementById('alert-banner').style.display = 'none';
+}

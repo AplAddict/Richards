@@ -1502,3 +1502,41 @@ img {
      text-align: left;
    }
  }
+
+ .alert-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+    background-color: #f8f9fa; /* Light grey background */
+    color: #6c757d; /* Muted grey text color */
+    font-size: 14px;
+    font-weight: normal;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative; /* Make the banner part of the document flow */
+    width: 100%;
+    z-index: 9999;
+}
+
+body {
+    margin-top: 40px; /* Adjust this value to match the height of the banner */
+}
+
+.alert-text {
+    flex: 1;
+    text-align: center;
+}
+
+.alert-close {
+   background: none;
+   border: none;
+   font-size: 16px;
+   cursor: pointer;
+   color: #6c757d; /* Default color */
+   transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.alert-close:hover {
+   color: #343a40; /* Darker color on hover */
+   background: none;
+} 
