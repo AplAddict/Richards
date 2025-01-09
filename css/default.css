@@ -1519,7 +1519,7 @@ img {
 }
 
 body {
-    margin-top: 40px; /* Adjust this value to match the height of the banner */
+     /* margin-top: 20px; Adjust this value to match the height of the banner */
 }
 
 .alert-text {
