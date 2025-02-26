@@ -844,6 +844,10 @@ input[type="checkbox"] {
    margin: 0 auto;
 }
 
+.row img {
+   width: 100%;
+}
+
 /* fixed width for IE8 */
 .ie .row {
    width: 1000px;
@@ -1325,10 +1329,11 @@ img {
 
 /* Slideshow container */
 .slideshow-container {
-   max-width: 1000px;
+   max-width: 100%;
    position: relative;
-   margin: auto;
    display: none;
+   margin-left: 25px !important;
+   margin-right: 25px !important;
 }
 
 /* Next & previous buttons */
@@ -1397,144 +1402,108 @@ img {
 
 /* Dropoff */
 .drop-off-section {
-   max-width: 800px;
-   margin: 0 auto;
+   margin-left: 25px;
+   margin-right: 25px;
    font-family: Arial, sans-serif;
    background-color: #1e1e1e;
    border-radius: 8px;
    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
    color: #e0e0e0;
- }
- 
- .expandable-heading {
+}
+
+.expandable-heading {
    text-align: center;
    color: #ffffff;
    cursor: pointer;
    transition: color 0.3s ease;
- }
- 
- .expandable-heading:hover {
+}
+
+.expandable-heading:hover {
    color: #4a90e2;
- }
- 
- .content-collapsed {
+}
+
+.content-collapsed {
    display: none;
- }
- 
- .content-expanded {
+}
+
+.content-expanded {
    display: block;
- }
- 
- .location-directions,
- .drop-off-process {
+}
+
+.location-directions,
+.drop-off-process {
    display: flex;
    flex-wrap: wrap;
    margin-bottom: 20px;
- }
- 
- .image-container {
+}
+
+.image-container {
    flex: 1 1 50%;
    text-align: center;
    margin-bottom: 10px;
- }
- 
- .image-container img {
+}
+
+.image-container img {
    max-width: 100%;
    height: auto;
    border-radius: 8px;
    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
- }
- 
- .directions-text,
- .process-text {
+}
+
+.directions-text,
+.process-text {
    flex: 1 1 50%;
    padding: 10px 20px;
- }
- 
- h3 {
+}
+
+h3 {
    color: #ffffff;
    margin-bottom: 10px;
- }
- 
- p {
+}
+
+p {
    color: #cccccc;
    line-height: 1.6;
- }
- 
- ul {
+}
+
+ul {
    list-style: disc;
    margin: 10px 0;
    padding-left: 20px;
    color: #cccccc;
- }
- 
- ul li {
+}
+
+ul li {
    margin-bottom: 10px;
- }
- 
- a {
+}
+
+a {
    color: #4a90e2;
    text-decoration: none;
- }
- 
- a:hover {
+}
+
+a:hover {
    text-decoration: underline;
- }
- 
- .assistance {
+}
+
+.assistance {
    text-align: center;
    color: #cccccc;
    margin-top: 20px;
- }
- 
- @media screen and (max-width: 768px) {
+   padding: 10px 20px;
+}
+
+@media screen and (max-width: 768px) {
+
    .location-directions,
    .drop-off-process {
-     flex-direction: column;
+      flex-direction: column;
    }
- 
+
    .image-container,
    .directions-text,
    .process-text {
-     flex: 1 1 100%;
-     text-align: left;
+      flex: 1 1 100%;
+      text-align: left;
    }
- }
-
- .alert-banner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 15px;
-    background-color: #f8f9fa; /* Light grey background */
-    color: #6c757d; /* Muted grey text color */
-    font-size: 14px;
-    font-weight: normal;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative; /* Make the banner part of the document flow */
-    width: 100%;
-    z-index: 9999;
 }
-
-body {
-     /* margin-top: 20px; Adjust this value to match the height of the banner */
-}
-
-.alert-text {
-    flex: 1;
-    text-align: center;
-}
-
-.alert-close {
-   background: none;
-   border: none;
-   font-size: 16px;
-   cursor: pointer;
-   color: #6c757d; /* Default color */
-   transition: color 0.3s ease; /* Smooth transition for color change */
-}
-
-.alert-close:hover {
-   color: #343a40; /* Darker color on hover */
-   background: none;
-} 
