@@ -1399,7 +1399,6 @@ img {
 .drop-off-section {
    max-width: 800px;
    margin: 0 auto;
-   padding: 20px;
    font-family: Arial, sans-serif;
    background-color: #1e1e1e;
    border-radius: 8px;
@@ -1411,7 +1410,6 @@ img {
    text-align: center;
    color: #ffffff;
    cursor: pointer;
-   margin-bottom: 20px;
    transition: color 0.3s ease;
  }
  
