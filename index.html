@@ -102,8 +102,8 @@
             <li><a class="smoothscroll" href="#dropOffHeading" onclick="expand();">Drop-Off</a></li>
             <li><a class="smoothscroll" href="#reviews">Reviews</a></li>
             <li><a class="smoothscroll" href="#certifications">Certifications</a></li>
-            <li><a class="smoothscroll" href="javascript:void(0);" onclick="frame('true')">Authorization</a></li>
-            <li><a class="smoothscroll" href="javascript:void(0);" onclick="frame('false')">Tesla Authorization</a></li>
+            <li><a class="smoothscroll" href="#documents" onclick="frame('true')">Authorization</a></li>
+            <li><a class="smoothscroll" href="#documents" onclick="frame('false')">Tesla Authorization</a></li>
             <li><a target="_blank"
                   href="https://docs.google.com/forms/d/e/1FAIpQLSec2MLY-TuIQmBEv-Sh_1knqGM7O6G-fWmqW6mdD4KeI0L9Qg/viewform?usp=sf_link">Jobs</a>
             </li>
@@ -882,7 +882,6 @@
       <script src="js/init.js"></script>
       <script>
          function frame(tesla) {
-            location.href = "#documents";
             if (tesla) {
                document.getElementById("frames").src = "https://na4.docusign.net/Member/PowerFormSigning.aspx?PowerFormId=1d763405-254a-4542-a970-4289f258db01&env=na4&acct=18d44872-eb3f-417f-b02b-126b78fca207&v=2";
             } else {
