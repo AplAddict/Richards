@@ -230,19 +230,35 @@ $(window).on("load", function () {
 /*	Dropoff Expand
 ------------------------------------------------------*/
 
- function expand() {
+function expand() {
    var content = document.getElementById("dropOffContent");
    if (content.style.display === "none" || content.style.display === "") {
-     content.style.display = "block";
+      content.style.display = "block";
    } else {
-     content.style.display = "none";
+      content.style.display = "none";
    }
- }
+}
 
 /*----------------------------------------------------*/
 /*	Alert
 ------------------------------------------------------*/
 
- function closeAlert() {
+function closeAlert() {
    document.getElementById('alert-banner').style.display = 'none';
+}
+
+/*----------------------------------------------------*/
+/*	Documents
+------------------------------------------------------*/
+
+function frame(tesla) {
+   if (tesla) {
+      document.getElementById("frames").src = "https://na4.docusign.net/Member/PowerFormSigning.aspx?PowerFormId=1d763405-254a-4542-a970-4289f258db01&env=na4&acct=18d44872-eb3f-417f-b02b-126b78fca207&v=2";
+      document.getElementById("authtesla").classList.add('current');
+      document.getElementById("auth").classList.remove('current');
+   } else {
+      document.getElementById("frames").src = "https://na4.docusign.net/Member/PowerFormSigning.aspx?PowerFormId=f7479078-ff01-4a06-b7f9-13b4369839c6&env=na4&acct=18d44872-eb3f-417f-b02b-126b78fca207&v=2";
+      document.getElementById("auth").classList.add('current');
+      document.getElementById("authtesla").classList.remove('current');
+   }
 }
