@@ -30,10 +30,9 @@
    <meta name="twitter:image:width" content="900">
    <meta name="twitter:image:height" content="586">
 
-   <!-- SEO Keywords
-   ================================================== -->
+   <!-- SEO Keywords (Optimized) -->
    <meta name="keywords"
-      content="Richard's, chicago collision center, collision center, tesla collision, certified collision center, icar certified, icar gold class, assured performance, body shop tesla, chicago tesla reapir, repair shop chicago, tesla shop, tesla auto body, repair tesla, EV repair, tesla certified, rivian certified, mopar certified, infiniti certified, land rover certified, nissan certified, subaru certified, electric vehicles shop, mechanic chicago, body shop the, body shop customer service, a body shop, at body shop, www body shop, body shop body shop, body shop shop, body shop body, body shop on, the body shop contact, about body shop, the shop body shop, it body shop, and body shop, in body shop, body shop is, body shop it, body shop be, body shop contact us, www body shop com, the body shop contact us, body shop a, body shop i, body shop about us, to body shop, contact body shop customer services, body showroom, as body shop, that body shop, body shop from, the body shop services, body shop for, in a body shop, body shop by">
+      content="Chicago auto body shop, collision repair, Tesla certified, EV repair, Chicago mechanic, collision center">
 
    <!-- Mobile Specific Metas
    ================================================== -->
@@ -41,10 +40,8 @@
 
    <!-- CSS
     ================================================== -->
-   <link rel="stylesheet" href="css/default.css">
-   <link rel="stylesheet" href="css/layout.css">
-   <link rel="stylesheet" href="css/media-queries.css">
-   <link rel="stylesheet" href="css/magnific-popup.css">
+   <link rel="stylesheet" href="css/main.min.css">
+   <link rel="stylesheet" href="css/magnific-popup.min.css">
 
    <!-- Script
    ================================================== -->
@@ -66,12 +63,40 @@
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQVXZ7Y2NV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<script async src="js/analytics.js"></script>
 
-  gtag('config', 'G-FQVXZ7Y2NV');
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Richard's Body Shop",
+  "image": "https://www.richardsbodyshop.com/images/richards_1.webp",
+  "description": "Chicago auto body shop providing exceptional collision repair service since 1983. Tesla certified, EV specialists.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3030 W Lawrence Ave",
+    "addressLocality": "Chicago",
+    "addressRegion": "IL",
+    "postalCode": "60625",
+    "addressCountry": "US"
+  },
+  "telephone": "(773)-588-3301",
+  "email": "office@richardsbodyshop.com",
+  "url": "https://www.richardsbodyshop.com",
+  "priceRange": "$$",
+  "areaServed": {
+    "@type": "City",
+    "name": "Chicago"
+  },
+  "sameAs": [
+    "https://www.facebook.com/share/185rpy6eyh/?mibextid=wwXIfr",
+    "https://www.instagram.com/rbs_chicago/",
+    "https://www.tiktok.com/@richardsbodyshop"
+  ],
+  "serviceType": ["Collision Repair", "Auto Body Repair", "EV Repair"],
+  "knowsAbout": ["Tesla", "Rivian", "EV Repair"]
+}
 </script>
 
 <body>
@@ -152,26 +177,7 @@
       </div>
       <script type="text/javascript"
          src="https://www.carwise.com/plugins-v2/photo-estimate-plugin/516282/resources/js/plugin.js" async></script>
-      <script>
-         // Using MutationObserver to apply styles after widget updates
-         window.onload = function () {
-            const targetNode = document.getElementById('widget-container');
-
-            const config = { attributes: true, childList: true, subtree: true };
-
-            const callback = function (mutationsList, observer) {
-               for (let mutation of mutationsList) {
-                  if (mutation.type === 'childList') {
-                     targetNode.style.clipPath = 'inset(0 33.33% 0 0)';
-                     targetNode.style.overflow = 'hidden';
-                  }
-               }
-            };
-
-            const observer = new MutationObserver(callback);
-            observer.observe(targetNode, config);
-         };
-      </script>
+      <script async src="js/widget-observer.js"></script>
 
    </section>
    <!-- Contact Section
@@ -301,20 +307,34 @@
          <center>
             <div class="row, row1">
                <div class="column">
-                  <img src="/images/gallery/newbuilding.webp" loading="lazy" alt="The storefront of our new building!">
-                  <img src="/images/gallery/driveway.webp" loading="lazy" alt="Brick driveway with a Tesla on it">
-                  <img src="/images/gallery/mechanic.webp" loading="lazy" alt="Mechanic shop storefront">
+                  <a href="/images/gallery/newbuilding.webp" data-lightbox="gallery" title="The storefront of our new building!">
+                     <img src="/images/gallery/newbuilding.webp" loading="lazy" alt="The storefront of our new building!">
+                  </a>
+                  <a href="/images/gallery/driveway.webp" data-lightbox="gallery" title="Brick driveway with a Tesla on it">
+                     <img src="/images/gallery/driveway.webp" loading="lazy" alt="Brick driveway with a Tesla on it">
+                  </a>
+                  <a href="/images/gallery/mechanic.webp" data-lightbox="gallery" title="Mechanic shop storefront">
+                     <img src="/images/gallery/mechanic.webp" loading="lazy" alt="Mechanic shop storefront">
+                  </a>
                </div>
                <div class="column">
-                  <img src="/images/gallery/stairs.jpg" loading="lazy"
-                     alt="Ballroom style stairs and balcony in showroom">
-                  <img src="/images/gallery/oldcar.jpg" loading="lazy" alt="Antique car in showroom">
-                  <img src="/images/gallery/front.jpg" loading="lazy" alt="Ornate architecture of showroom entrance">
+                  <a href="/images/gallery/stairs.jpg" data-lightbox="gallery" title="Ballroom style stairs and balcony in showroom">
+                     <img src="/images/gallery/stairs.jpg" loading="lazy" alt="Ballroom style stairs and balcony in showroom">
+                  </a>
+                  <a href="/images/gallery/oldcar.jpg" data-lightbox="gallery" title="Antique car in showroom">
+                     <img src="/images/gallery/oldcar.jpg" loading="lazy" alt="Antique car in showroom">
+                  </a>
+                  <a href="/images/gallery/front.jpg" data-lightbox="gallery" title="Ornate architecture of showroom entrance">
+                     <img src="/images/gallery/front.jpg" loading="lazy" alt="Ornate architecture of showroom entrance">
+                  </a>
                </div>
                <div class="column">
-                  <img src="/images/gallery/storefront.webp" loading="lazy" alt="Retro Richard's sign">
-                  <img src="/images/gallery/spraybooth.webp" loading="lazy"
-                     alt="Brand new pair of Spanesi spray booths">
+                  <a href="/images/gallery/storefront.webp" data-lightbox="gallery" title="Retro Richard's sign">
+                     <img src="/images/gallery/storefront.webp" loading="lazy" alt="Retro Richard's sign">
+                  </a>
+                  <a href="/images/gallery/spraybooth.webp" data-lightbox="gallery" title="Brand new pair of Spanesi spray booths">
+                     <img src="/images/gallery/spraybooth.webp" loading="lazy" alt="Brand new pair of Spanesi spray booths">
+                  </a>
                </div>
             </div>
          </center>
@@ -987,14 +1007,15 @@
 
       <!-- Java Script
    ================================================== -->
-      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
       <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
       <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-      <script src="js/jquery.flexslider.js"></script>
-      <script src="js/waypoints.js"></script>
-      <script src="js/jquery.fittext.js"></script>
-      <script src="js/magnific-popup.js"></script>
-      <script src="js/init.js"></script>
+      <script src="js/jquery.flexslider.min.js"></script>
+      <script src="js/waypoints.min.js"></script>
+      <script src="js/jquery.fittext.min.js"></script>
+      <script src="js/magnific-popup.min.js"></script>
+      <script src="js/init.min.js"></script>
+      <script src="js/lightbox.js"></script>
 </body>
 <call-us-selector phonesystem-url="https://rbs3030.il.3cx.us" party="LiveChat537326"></call-us-selector>
 <script defer src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js" id="tcx-callus-js"
