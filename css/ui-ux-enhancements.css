@@ -1,0 +1,621 @@
+/* =====================================================
+   UI/UX ENHANCEMENTS FOR RICHARD'S BODY SHOP
+   Modernization: Visual Hierarchy, Colors, Typography, Mobile
+   ===================================================== */
+
+/* ===== COLOR PALETTE (Modern Brand Refresh) ===== */
+:root {
+  /* Brand Colors */
+  --primary-red: #b01111;
+  --primary-red-light: #c71e1e;
+  --primary-red-dark: #8b0d0d;
+  
+  /* Neutrals (improved contrast) */
+  --bg-dark: #0f0f0f;
+  --bg-light: #ffffff;
+  --bg-gray: #f5f5f5;
+  --bg-card: #1a1a1a;
+  
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: #e0e0e0;
+  --text-muted: #b0b0b0;
+  --text-dark: #1a1a1a;
+  
+  /* Accents */
+  --accent-gold: #d4af37;
+  --accent-success: #27ae60;
+  --accent-warning: #f39c12;
+}
+
+/* ===== HEADER & NAVIGATION IMPROVEMENTS ===== */
+
+/* Better Navigation Styling */
+#nav-wrap {
+  background: rgba(15, 15, 15, 0.95) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--primary-red);
+}
+
+#nav ul#nav li a {
+  color: var(--text-primary);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 12px 18px;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+#nav ul#nav li a:hover,
+#nav ul#nav li a.active {
+  color: var(--primary-red-light);
+  border-bottom-color: var(--primary-red);
+  padding-bottom: 9px;
+}
+
+/* Mobile Nav Toggle Button - Better Contrast */
+#nav-wrap > a {
+  background-color: var(--primary-red) !important;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+#nav-wrap > a:hover {
+  background-color: var(--primary-red-light) !important;
+}
+
+/* ===== BANNER & HEADLINE IMPROVEMENTS ===== */
+
+header .banner-text h1 {
+  font-weight: 900;
+  letter-spacing: -1px;
+  text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
+  margin-bottom: 20px;
+}
+
+header .banner-text h3 {
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+  line-height: 1.8;
+}
+
+/* ===== CTA BUTTONS - PROMINENT & MODERN ===== */
+
+.button,
+button {
+  background: var(--primary-red) !important;
+  color: var(--text-primary) !important;
+  padding: 14px 32px !important;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 4px 15px rgba(176, 17, 17, 0.3);
+  cursor: pointer;
+}
+
+.button:hover,
+button:hover {
+  background: var(--primary-red-light) !important;
+  box-shadow: 0 6px 25px rgba(176, 17, 17, 0.5);
+  transform: translateY(-2px);
+}
+
+.button:active,
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(176, 17, 17, 0.4);
+}
+
+/* ===== SECTION HEADERS - STRONGER HIERARCHY ===== */
+
+section {
+  scroll-margin-top: 80px; /* Fixed header offset */
+}
+
+section h1 {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+  text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+section h1:before {
+  content: '';
+  display: inline-block;
+  width: 50px;
+  height: 4px;
+  background: var(--primary-red);
+  margin-right: 15px;
+  vertical-align: middle;
+}
+
+section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+section h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* ===== REPAIR STATUS SECTION ===== */
+
+#status {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  padding: 80px 0;
+}
+
+#status h1 {
+  color: var(--primary-red);
+  margin-bottom: 40px;
+}
+
+.status-box {
+  background: var(--bg-card);
+  border-left: 5px solid var(--primary-red);
+  padding: 20px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.status-box:hover {
+  box-shadow: 0 8px 24px rgba(176, 17, 17, 0.2);
+  transform: translateX(4px);
+}
+
+/* ===== CONTACT SECTION - PROMINENT CTA ===== */
+
+#contact {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+  padding: 80px 0;
+}
+
+#contact .contact-details {
+  background: var(--bg-card);
+  padding: 30px;
+  border-radius: 8px;
+  border-top: 4px solid var(--primary-red);
+}
+
+#contact .contact-details h2 {
+  color: var(--primary-red);
+  margin-bottom: 20px;
+}
+
+#contact .contact-details a {
+  color: var(--primary-red-light);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+#contact .contact-details a:hover {
+  color: var(--accent-gold);
+  text-decoration: underline;
+}
+
+/* Prominent Phone Button */
+.contact-phone-btn {
+  display: inline-block;
+  background: var(--primary-red);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+  margin: 20px 0;
+  box-shadow: 0 4px 15px rgba(176, 17, 17, 0.3);
+  transition: all 0.3s ease;
+}
+
+.contact-phone-btn:hover {
+  background: var(--primary-red-light);
+  box-shadow: 0 6px 25px rgba(176, 17, 17, 0.5);
+  transform: scale(1.05);
+}
+
+.contact-phone-btn i {
+  margin-right: 10px;
+}
+
+/* ===== CERTIFICATIONS SECTION - CARD LAYOUT ===== */
+
+#certifications {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  padding: 80px 0;
+}
+
+#certifications h1 {
+  color: var(--primary-red);
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.certifications-item {
+  background: var(--bg-card);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 2px solid transparent;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.certifications-item:hover {
+  border-color: var(--primary-red);
+  box-shadow: 0 8px 30px rgba(176, 17, 17, 0.3);
+  transform: translateY(-8px);
+}
+
+.certifications-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.certifications-item:hover img {
+  transform: scale(1.05);
+}
+
+.certifications-item-meta {
+  padding: 15px;
+  text-align: center;
+}
+
+.certifications-item-meta h5 {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+/* ===== REVIEWS SECTION - TRUST SIGNALS ===== */
+
+#reviews {
+  background: #0f0f0f;
+  padding: 80px 0;
+}
+
+#reviews h1 {
+  color: var(--primary-red);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.review-card {
+  background: var(--bg-card);
+  padding: 25px;
+  border-radius: 8px;
+  border-left: 5px solid var(--primary-red);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.review-card:hover {
+  box-shadow: 0 6px 20px rgba(176, 17, 17, 0.2);
+}
+
+.review-card .rating {
+  color: var(--accent-gold);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.review-card .text {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.review-card .author {
+  color: var(--primary-red-light);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* ===== SERVICES SECTION ===== */
+
+#services {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  padding: 80px 0;
+}
+
+#services h1 {
+  color: var(--primary-red);
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.service-card {
+  background: var(--bg-card);
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 2px solid transparent;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  border-color: var(--primary-red);
+  box-shadow: 0 8px 30px rgba(176, 17, 17, 0.3);
+  transform: translateY(-10px);
+}
+
+.service-card .icon {
+  font-size: 48px;
+  color: var(--primary-red);
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.service-card p {
+  color: var(--text-muted);
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+/* ===== TRUST BADGES ===== */
+
+.trust-section {
+  background: var(--bg-card);
+  padding: 40px;
+  border-radius: 8px;
+  border-top: 4px solid var(--primary-red);
+  margin: 40px 0;
+}
+
+.trust-section h3 {
+  color: var(--primary-red);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.trust-section h3:before {
+  content: '✓';
+  color: var(--accent-success);
+  font-weight: 900;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+/* ===== FORMS - IMPROVED STYLING ===== */
+
+input,
+textarea,
+select {
+  background: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+  border: 2px solid #444 !important;
+  border-radius: 6px;
+  padding: 12px 15px !important;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary-red) !important;
+  box-shadow: 0 0 0 3px rgba(176, 17, 17, 0.2) !important;
+  outline: none !important;
+}
+
+label {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* ===== MOBILE OPTIMIZATIONS ===== */
+
+@media (max-width: 768px) {
+  
+  section h1 {
+    font-size: 36px;
+  }
+  
+  section h1:before {
+    display: none; /* Remove decorative line on mobile */
+  }
+  
+  header .banner-text h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+  }
+  
+  header .banner-text h3 {
+    font-size: 18px;
+  }
+  
+  /* Larger touch targets for mobile */
+  .button,
+  button {
+    padding: 16px 28px !important;
+    font-size: 16px;
+    min-height: 48px; /* Touch target minimum */
+  }
+  
+  .contact-phone-btn {
+    width: 100%;
+    text-align: center;
+    padding: 18px 20px;
+    font-size: 18px;
+  }
+  
+  /* Certifications grid - single column on small phones */
+  #certifications-wrapper {
+    display: block !important;
+  }
+  
+  .certifications-item {
+    margin-bottom: 20px;
+  }
+  
+  /* Better spacing on mobile */
+  section {
+    padding: 50px 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  
+  header .banner-text h1 {
+    font-size: 36px;
+  }
+  
+  section h1 {
+    font-size: 28px;
+  }
+  
+  .button,
+  button {
+    padding: 14px 24px !important;
+    font-size: 15px;
+  }
+}
+
+/* ===== ACCESSIBILITY IMPROVEMENTS ===== */
+
+/* Improved focus states */
+a:focus,
+button:focus,
+input:focus {
+  outline: 2px solid var(--primary-red);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+  .button,
+  button {
+    border: 2px solid var(--primary-red);
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== ANIMATION IMPROVEMENTS ===== */
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.service-card,
+.certifications-item,
+.review-card {
+  animation: slideInUp 0.6s ease-out;
+}
+
+/* ===== FOOTER IMPROVEMENTS ===== */
+
+footer {
+  background: #000;
+  border-top: 3px solid var(--primary-red);
+}
+
+footer p {
+  color: var(--text-secondary);
+}
+
+footer a {
+  color: var(--primary-red-light);
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--accent-gold);
+}
+
+/* ===== RESPONSIVE UTILITY CLASSES ===== */
+
+.hidden-mobile {
+  display: none !important;
+}
+
+@media (min-width: 769px) {
+  .hidden-mobile {
+    display: block !important;
+  }
+  
+  .visible-mobile {
+    display: none !important;
+  }
+}
+
+/* ===== TEXT UTILITIES ===== */
+
+.text-center {
+  text-align: center;
+}
+
+.mt-large {
+  margin-top: 40px;
+}
+
+.mb-large {
+  margin-bottom: 40px;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 10px;
+}
