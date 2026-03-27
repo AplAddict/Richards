@@ -1,0 +1,473 @@
+/* =====================================================
+   MOBILE-FIRST RESPONSIVE IMPROVEMENTS
+   Enhanced mobile UX, better readability, touch-friendly
+   ===================================================== */
+
+/* ===== MOBILE HEADER IMPROVEMENTS ===== */
+
+@media (max-width: 768px) {
+  
+  /* Better mobile banner spacing */
+  header {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  header .banner-text {
+    width: 90%;
+    padding: 20px;
+    z-index: 2;
+  }
+  
+  header .banner-text h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    font-weight: 900;
+  }
+  
+  header .banner-text h3 {
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Social links - better spacing */
+  header .social {
+    margin: 25px 0;
+    font-size: 28px;
+  }
+  
+  header .social li {
+    margin: 0 12px;
+  }
+  
+  /* Scroll indicator better visibility on mobile */
+  .scrolldown {
+    margin-bottom: 40px;
+  }
+  
+  /* ===== MOBILE NAVIGATION IMPROVEMENTS ===== */
+  
+  /* Better menu styling */
+  #nav-wrap > a {
+    z-index: 999;
+    background-color: var(--primary-red) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  #nav-wrap:target > ul#nav {
+    background: rgba(31, 31, 31, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 80px 20px 48px 20px;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-radius: 0 0 8px 8px;
+  }
+  
+  ul#nav li {
+    border-bottom: 1px solid #3a3a3a;
+  }
+  
+  ul#nav li a {
+    padding: 14px 12px;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+    color: white;
+    transition: all 0.2s ease;
+  }
+  
+  ul#nav li a:hover {
+    color: var(--primary-red-light);
+    padding-left: 16px;
+  }
+  
+  /* ===== MOBILE SECTION PADDING ===== */
+  
+  section {
+    padding: 50px 20px !important;
+  }
+  
+  .row {
+    padding: 0 10px;
+  }
+  
+  /* ===== MOBILE FORM IMPROVEMENTS ===== */
+  
+  input,
+  textarea,
+  select {
+    font-size: 16px !important; /* Prevents zoom on focus */
+    padding: 14px 12px !important;
+  }
+  
+  textarea {
+    min-height: 120px;
+  }
+  
+  /* ===== MOBILE BUTTON IMPROVEMENTS ===== */
+  
+  .button,
+  button {
+    padding: 16px 24px !important;
+    font-size: 16px;
+    min-height: 48px;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 100%;
+    margin: 12px 0;
+  }
+  
+  .contact-phone-btn {
+    width: 100%;
+    padding: 18px 16px !important;
+    font-size: 17px;
+    font-weight: 700;
+    margin: 20px 0 !important;
+  }
+  
+  /* ===== MOBILE GRID ADJUSTMENTS ===== */
+  
+  .columns {
+    margin-left: 0;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .one.columns { width: 100%; }
+  .two.columns { width: 100%; }
+  .three.columns { width: 100%; }
+  .four.columns { width: 100%; }
+  .five.columns { width: 100%; }
+  .six.columns { width: 100%; }
+  .seven.columns { width: 100%; }
+  .eight.columns { width: 100%; }
+  .nine.columns { width: 100%; }
+  .ten.columns { width: 100%; }
+  .eleven.columns { width: 100%; }
+  .twelve.columns { width: 100%; }
+  
+  /* ===== CONTACT SECTION MOBILE ===== */
+  
+  #contact .profile-pic {
+    display: none;
+  }
+  
+  .contact-details {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .contact-details h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .address span {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  /* ===== SERVICE CARDS MOBILE ===== */
+  
+  .service-card {
+    margin-bottom: 20px;
+    padding: 24px !important;
+  }
+  
+  .service-card .icon {
+    font-size: 40px;
+  }
+  
+  .service-card h3 {
+    font-size: 20px;
+  }
+  
+  .service-card p {
+    font-size: 14px;
+  }
+  
+  /* ===== CERTIFICATIONS MOBILE ===== */
+  
+  #certifications-wrapper {
+    display: block !important;
+  }
+  
+  .certifications-item {
+    margin-bottom: 16px;
+    border-radius: 8px;
+  }
+  
+  /* ===== TEXT SIZING FOR MOBILE ===== */
+  
+  h1 {
+    font-size: 32px !important;
+  }
+  
+  h2 {
+    font-size: 24px !important;
+  }
+  
+  h3 {
+    font-size: 18px !important;
+  }
+  
+  p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  
+  /* ===== TRUST SECTION MOBILE ===== */
+  
+  .trust-section {
+    padding: 24px;
+    margin: 24px 0;
+  }
+}
+
+/* ===== SMALLER PHONES (480px and below) ===== */
+
+@media (max-width: 480px) {
+  
+  header .banner-text h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+  
+  header .banner-text h3 {
+    font-size: 16px;
+  }
+  
+  header .social {
+    font-size: 24px;
+  }
+  
+  header .social li {
+    margin: 0 8px;
+  }
+  
+  section {
+    padding: 40px 15px !important;
+  }
+  
+  .row {
+    padding: 0;
+  }
+  
+  .button,
+  button {
+    padding: 14px 16px !important;
+    font-size: 15px;
+    margin: 10px 0;
+  }
+  
+  .contact-phone-btn {
+    padding: 16px 12px !important;
+    font-size: 16px;
+  }
+  
+  h1 {
+    font-size: 28px !important;
+  }
+  
+  h2 {
+    font-size: 22px !important;
+  }
+  
+  .service-card {
+    padding: 20px !important;
+  }
+  
+  .service-card .icon {
+    font-size: 36px;
+  }
+  
+  /* Remove decorative elements on very small screens */
+  section h1:before {
+    display: none;
+  }
+  
+  /* Better iframe sizing on mobile */
+  iframe {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  
+  .gmap_iframe {
+    width: 100% !important;
+    height: 250px !important;
+  }
+  
+  .mapouter {
+    width: 100% !important;
+    height: 250px !important;
+  }
+  
+  .gmap_canvas {
+    width: 100% !important;
+    height: 250px !important;
+  }
+}
+
+/* ===== TABLET OPTIMIZATION (768px - 1024px) ===== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  
+  section {
+    padding: 60px 30px !important;
+  }
+  
+  .columns {
+    margin-bottom: 25px;
+  }
+  
+  .service-card {
+    margin-bottom: 24px;
+  }
+  
+  h1 {
+    font-size: 38px !important;
+  }
+  
+  h2 {
+    font-size: 28px !important;
+  }
+  
+  header .banner-text h1 {
+    font-size: 52px;
+  }
+  
+  header .banner-text h3 {
+    font-size: 18px;
+  }
+}
+
+/* ===== LANDSCAPE ORIENTATION FIXES ===== */
+
+@media (max-height: 600px) and (orientation: landscape) {
+  
+  header {
+    min-height: 80vh;
+  }
+  
+  header .banner-text h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  header .banner-text h3 {
+    font-size: 16px;
+  }
+  
+  header .social {
+    margin: 15px 0;
+  }
+  
+  .scrolldown {
+    margin-bottom: 20px;
+  }
+}
+
+/* ===== TOUCH-FRIENDLY IMPROVEMENTS ===== */
+
+@media (hover: none) and (pointer: coarse) {
+  
+  /* Larger touch targets */
+  a,
+  button,
+  .button {
+    min-height: 48px;
+    min-width: 48px;
+    padding: 12px 16px;
+  }
+  
+  /* Reduce hover effects on touch devices */
+  .service-card:hover,
+  .certifications-item:hover {
+    transform: none;
+  }
+  
+  /* Simplify interactions */
+  ul#nav li a:active {
+    background: rgba(176, 17, 17, 0.2);
+    color: var(--primary-red-light);
+  }
+}
+
+/* ===== HIGH RESOLUTION DISPLAYS (Retina) ===== */
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+  
+  /* Slightly increase text for clarity on high-DPI screens */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  button,
+  .button {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* ===== REDUCED MOTION SUPPORT ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== DARK MODE ENHANCEMENTS ===== */
+
+@media (prefers-color-scheme: dark) {
+  
+  /* Already dark-themed, but ensure proper contrast */
+  button,
+  .button {
+    color: white !important;
+    background: var(--primary-red) !important;
+  }
+  
+  input,
+  textarea,
+  select {
+    background: var(--bg-card) !important;
+    color: white !important;
+  }
+}
+
+/* ===== PRINT STYLES ===== */
+
+@media print {
+  
+  #nav-wrap,
+  footer,
+  .scrolldown {
+    display: none;
+  }
+  
+  section {
+    page-break-inside: avoid;
+    padding: 20px !important;
+  }
+  
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+  
+  button,
+  .button {
+    display: none;
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+}
