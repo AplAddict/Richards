@@ -2,6 +2,7 @@ css/Richards.code-workspace
 .vscode/settings.json
 images/.DS_Store
 .DS_Store
+Thumbs.db
 
 # local-only backups and scratch artifacts
 private-backups/

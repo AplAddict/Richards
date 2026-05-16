@@ -39,6 +39,10 @@ const rafThrottle = (callback) => {
   };
 };
 
+const syncViewportHeight = () => {
+  document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
+};
+
 const syncTopbarOffset = () => {
   const topbarVisible = !!(topbar && !topbar.hidden && window.getComputedStyle(topbar).display !== 'none');
   const topbarHeight = topbarVisible ? topbar.offsetHeight : 0;
@@ -345,6 +349,15 @@ const initHeroVideo = () => {
   let interactionRetryBound = false;
   let retryListeners = [];
   let statusTimeout = null;
+  let lastPlayAttemptAt = 0;
+
+  const clearRetryListeners = () => {
+    retryListeners.forEach(([eventName, handler]) => {
+      window.removeEventListener(eventName, handler);
+    });
+    retryListeners = [];
+  };
+
   const markReady = () => {
     if (readySettled) return;
     readySettled = true;
@@ -354,11 +367,9 @@ const initHeroVideo = () => {
       window.clearTimeout(statusTimeout);
       statusTimeout = null;
     }
-    retryListeners.forEach(([eventName, handler]) => {
-      window.removeEventListener(eventName, handler);
-    });
-    retryListeners = [];
+    clearRetryListeners();
   };
+
   const showUnavailable = () => {
     if (readySettled) return;
     hero.classList.add('hero-video-unavailable');
@@ -366,15 +377,24 @@ const initHeroVideo = () => {
   };
 
   const attemptPlay = (reloadFirst = false) => {
+    const now = Date.now();
+    if (!reloadFirst && now - lastPlayAttemptAt < 250) return;
+    lastPlayAttemptAt = now;
+
     if (reloadFirst || heroVideo.readyState < 2) {
       heroVideo.load();
     }
+
     heroVideo.muted = true;
     heroVideo.defaultMuted = true;
+    heroVideo.playsInline = true;
     hero.classList.remove('hero-video-unavailable');
+
     const playPromise = heroVideo.play();
-    if (playPromise && typeof playPromise.catch === 'function') {
-      playPromise.catch(() => {
+    if (playPromise && typeof playPromise.then === 'function') {
+      playPromise.then(() => {
+        if (!heroVideo.paused) markReady();
+      }).catch(() => {
         showUnavailable();
       });
     }
@@ -389,18 +409,32 @@ const initHeroVideo = () => {
       attemptPlay(true);
     };
 
-    ['pointerdown', 'touchstart', 'scroll'].forEach((eventName) => {
+    ['pointerdown', 'touchstart', 'scroll', 'focus'].forEach((eventName) => {
       window.addEventListener(eventName, retryPlayback, { passive: true });
       retryListeners.push([eventName, retryPlayback]);
     });
   };
 
-  heroVideo.addEventListener('canplay', markReady, { once: true });
-  heroVideo.addEventListener('playing', markReady, { once: true });
-  heroVideo.addEventListener('loadeddata', markReady, { once: true });
-  heroVideo.addEventListener('error', showUnavailable, { once: true });
+  heroVideo.addEventListener('playing', markReady);
+  heroVideo.addEventListener('timeupdate', () => {
+    if (!readySettled && heroVideo.currentTime > 0.01) {
+      markReady();
+    }
+  });
+  heroVideo.addEventListener('loadeddata', () => {
+    if (!readySettled) attemptPlay();
+  });
+  heroVideo.addEventListener('canplay', () => {
+    if (!readySettled && heroVideo.paused) attemptPlay();
+  });
+  heroVideo.addEventListener('pause', () => {
+    if (!readySettled && !document.hidden) {
+      showUnavailable();
+    }
+  });
+  heroVideo.addEventListener('error', showUnavailable);
 
-  if (heroVideo.readyState >= 2) {
+  if (!heroVideo.paused && heroVideo.readyState >= 2 && heroVideo.currentTime > 0.01) {
     markReady();
   }
 
@@ -408,13 +442,19 @@ const initHeroVideo = () => {
   bindInteractionRetry();
 
   document.addEventListener('visibilitychange', () => {
-    if (!document.hidden && !readySettled && heroVideo.paused) {
-      attemptPlay();
+    if (!document.hidden && (!readySettled || heroVideo.paused)) {
+      attemptPlay(heroVideo.paused);
+    }
+  });
+
+  window.addEventListener('pageshow', () => {
+    if (!readySettled || heroVideo.paused) {
+      attemptPlay(heroVideo.paused);
     }
   });
 
   statusTimeout = window.setTimeout(() => {
-    if (!hero.classList.contains('hero-video-ready')) {
+    if (!readySettled) {
       showUnavailable();
     }
   }, 3200);
@@ -530,18 +570,31 @@ initMotion();
 
 const syncTopbarOffsetRaf = rafThrottle(syncTopbarOffset);
 const syncNavVisibilityRaf = rafThrottle(syncNavVisibility);
+const syncViewportHeightRaf = rafThrottle(syncViewportHeight);
 
 window.addEventListener('resize', syncTopbarOffset);
 window.addEventListener('resize', syncNavVisibilityRaf);
+window.addEventListener('resize', syncViewportHeightRaf);
 window.addEventListener('scroll', syncTopbarOffsetRaf, { passive: true });
 window.addEventListener('scroll', syncNavVisibilityRaf, { passive: true });
+window.addEventListener('pageshow', () => {
+  syncViewportHeight();
+  syncTopbarOffset();
+  syncNavVisibility();
+});
+window.addEventListener('load', syncViewportHeight);
 window.addEventListener('load', syncTopbarOffset);
 window.addEventListener('load', syncNavVisibility);
+syncViewportHeight();
 syncTopbarOffset();
 syncNavVisibility();
 
 if (topbar) {
   const topbarObserver = new MutationObserver(syncTopbarOffsetRaf);
   topbarObserver.observe(topbar, { childList: true, subtree: true, attributes: true });
-  [300, 1200, 2600].forEach((delay) => window.setTimeout(syncTopbarOffset, delay));
+  [300, 1200, 2600].forEach((delay) => window.setTimeout(() => {
+    syncViewportHeight();
+    syncTopbarOffset();
+    syncNavVisibility();
+  }, delay));
 }
