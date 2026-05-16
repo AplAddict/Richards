@@ -44,7 +44,14 @@ const syncViewportHeight = () => {
 };
 
 const syncTopbarOffset = () => {
-  const topbarVisible = !!(topbar && !topbar.hidden && window.getComputedStyle(topbar).display !== 'none');
+  const widgetDismissed = !!topbar?.querySelector('.es-announcement-bar-closed');
+  topbar?.classList.toggle('is-collapsed', widgetDismissed && !topbar.hidden);
+  const topbarVisible = !!(
+    topbar
+    && !topbar.hidden
+    && !topbar.classList.contains('is-collapsed')
+    && window.getComputedStyle(topbar).display !== 'none'
+  );
   const topbarHeight = topbarVisible ? topbar.offsetHeight : 0;
   const navHeight = siteNav?.offsetHeight || 84;
   const navTop = topbarVisible && window.scrollY < topbarHeight ? `${topbarHeight}px` : '0px';
