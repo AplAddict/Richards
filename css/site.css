@@ -2312,28 +2312,25 @@ body.modal-open {
 
   .hero-content {
     min-height: calc(var(--app-height, 100dvh) - var(--nav-height, 76px));
-    align-items: start;
     padding: 1.6rem 0 2.2rem;
     gap: 1rem;
   }
 
   .home-page .hero-content {
-    padding: clamp(4.2rem, 10vh, 5.6rem) 0 2.1rem;
+    padding: 2.35rem 0 3rem;
   }
 
   .home-page .hero-copy h1 {
-    max-width: none;
-    font-size: clamp(2.2rem, 8.9vw, 3.45rem);
-    line-height: 0.98;
+    font-size: clamp(3rem, 10vw, 4.2rem);
   }
 
   .home-page .hero-copy .hero-lead {
-    margin-top: 0.8rem;
-    font-size: 1rem;
+    margin-top: 1rem;
+    font-size: 1.04rem;
   }
 
   .home-page .hero-actions {
-    margin: 0.9rem 0 0.65rem;
+    margin: 2rem 0 1.6rem;
   }
 
   .home-page .hero-copy > * {
@@ -2642,7 +2639,7 @@ body.modal-open {
   }
 
   .home-page .hero-content {
-    padding: clamp(3.2rem, 8vh, 4.4rem) 0 1.65rem;
+    padding: 1rem 0 1.65rem;
   }
 
   .hero-actions {
