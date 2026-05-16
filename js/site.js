@@ -341,26 +341,41 @@ const initHeroVideo = () => {
   heroVideo.setAttribute('disableRemotePlayback', '');
   heroVideo.preload = 'auto';
 
-  let settled = false;
+  let readySettled = false;
   let interactionRetryBound = false;
+  let retryListeners = [];
+  let statusTimeout = null;
   const markReady = () => {
-    if (settled) return;
-    settled = true;
+    if (readySettled) return;
+    readySettled = true;
     hero.classList.add('hero-video-ready');
     hero.classList.remove('hero-video-unavailable');
+    if (statusTimeout) {
+      window.clearTimeout(statusTimeout);
+      statusTimeout = null;
+    }
+    retryListeners.forEach(([eventName, handler]) => {
+      window.removeEventListener(eventName, handler);
+    });
+    retryListeners = [];
   };
-  const markUnavailable = () => {
-    if (settled) return;
+  const showUnavailable = () => {
+    if (readySettled) return;
     hero.classList.add('hero-video-unavailable');
     hero.classList.remove('hero-video-ready');
   };
 
-  const attemptPlay = () => {
+  const attemptPlay = (reloadFirst = false) => {
+    if (reloadFirst || heroVideo.readyState < 2) {
+      heroVideo.load();
+    }
     heroVideo.muted = true;
+    heroVideo.defaultMuted = true;
+    hero.classList.remove('hero-video-unavailable');
     const playPromise = heroVideo.play();
     if (playPromise && typeof playPromise.catch === 'function') {
       playPromise.catch(() => {
-        markUnavailable();
+        showUnavailable();
       });
     }
   };
@@ -370,34 +385,37 @@ const initHeroVideo = () => {
     interactionRetryBound = true;
 
     const retryPlayback = () => {
-      if (settled) return;
-      hero.classList.remove('hero-video-unavailable');
-      if (heroVideo.readyState < 2) {
-        heroVideo.load();
-      }
-      attemptPlay();
+      if (readySettled) return;
+      attemptPlay(true);
     };
 
     ['pointerdown', 'touchstart', 'scroll'].forEach((eventName) => {
       window.addEventListener(eventName, retryPlayback, { passive: true });
+      retryListeners.push([eventName, retryPlayback]);
     });
   };
 
   heroVideo.addEventListener('canplay', markReady, { once: true });
   heroVideo.addEventListener('playing', markReady, { once: true });
-  heroVideo.addEventListener('error', markUnavailable, { once: true });
+  heroVideo.addEventListener('loadeddata', markReady, { once: true });
+  heroVideo.addEventListener('error', showUnavailable, { once: true });
 
   if (heroVideo.readyState >= 2) {
     markReady();
   }
 
-  heroVideo.load();
-  attemptPlay();
+  attemptPlay(true);
   bindInteractionRetry();
 
-  window.setTimeout(() => {
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden && !readySettled && heroVideo.paused) {
+      attemptPlay();
+    }
+  });
+
+  statusTimeout = window.setTimeout(() => {
     if (!hero.classList.contains('hero-video-ready')) {
-      markUnavailable();
+      showUnavailable();
     }
   }, 3200);
 };
@@ -521,3 +539,9 @@ window.addEventListener('load', syncTopbarOffset);
 window.addEventListener('load', syncNavVisibility);
 syncTopbarOffset();
 syncNavVisibility();
+
+if (topbar) {
+  const topbarObserver = new MutationObserver(syncTopbarOffsetRaf);
+  topbarObserver.observe(topbar, { childList: true, subtree: true, attributes: true });
+  [300, 1200, 2600].forEach((delay) => window.setTimeout(syncTopbarOffset, delay));
+}
