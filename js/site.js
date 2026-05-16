@@ -350,10 +350,11 @@ const initHeroVideo = () => {
   let retryListeners = [];
   let statusTimeout = null;
   let lastPlayAttemptAt = 0;
+  let playFailures = 0;
 
   const clearRetryListeners = () => {
-    retryListeners.forEach(([eventName, handler]) => {
-      window.removeEventListener(eventName, handler);
+    retryListeners.forEach(([eventName, handler, target = window]) => {
+      target.removeEventListener(eventName, handler);
     });
     retryListeners = [];
   };
@@ -376,6 +377,19 @@ const initHeroVideo = () => {
     hero.classList.remove('hero-video-ready');
   };
 
+  const refreshHeroVideoFlags = () => {
+    heroVideo.muted = true;
+    heroVideo.defaultMuted = true;
+    heroVideo.playsInline = true;
+    heroVideo.autoplay = true;
+    heroVideo.loop = true;
+    heroVideo.setAttribute('muted', '');
+    heroVideo.setAttribute('autoplay', '');
+    heroVideo.setAttribute('playsinline', '');
+    heroVideo.setAttribute('webkit-playsinline', '');
+    heroVideo.setAttribute('disableRemotePlayback', '');
+  };
+
   const attemptPlay = (reloadFirst = false) => {
     const now = Date.now();
     if (!reloadFirst && now - lastPlayAttemptAt < 250) return;
@@ -385,17 +399,19 @@ const initHeroVideo = () => {
       heroVideo.load();
     }
 
-    heroVideo.muted = true;
-    heroVideo.defaultMuted = true;
-    heroVideo.playsInline = true;
+    refreshHeroVideoFlags();
     hero.classList.remove('hero-video-unavailable');
 
     const playPromise = heroVideo.play();
     if (playPromise && typeof playPromise.then === 'function') {
       playPromise.then(() => {
+        playFailures = 0;
         if (!heroVideo.paused) markReady();
       }).catch(() => {
-        showUnavailable();
+        playFailures += 1;
+        if (playFailures >= 2) {
+          showUnavailable();
+        }
       });
     }
   };
@@ -409,13 +425,21 @@ const initHeroVideo = () => {
       attemptPlay(true);
     };
 
-    ['pointerdown', 'touchstart', 'scroll', 'focus'].forEach((eventName) => {
-      window.addEventListener(eventName, retryPlayback, { passive: true });
-      retryListeners.push([eventName, retryPlayback]);
+    [window, document].forEach((target) => {
+      ['pointerdown', 'touchstart', 'touchend', 'click', 'scroll', 'focus'].forEach((eventName) => {
+        target.addEventListener(eventName, retryPlayback, { passive: true });
+        retryListeners.push([eventName, retryPlayback, target]);
+      });
     });
   };
 
   heroVideo.addEventListener('playing', markReady);
+  heroVideo.addEventListener('loadedmetadata', () => {
+    if (!readySettled) {
+      refreshHeroVideoFlags();
+      attemptPlay();
+    }
+  });
   heroVideo.addEventListener('timeupdate', () => {
     if (!readySettled && heroVideo.currentTime > 0.01) {
       markReady();
@@ -427,10 +451,8 @@ const initHeroVideo = () => {
   heroVideo.addEventListener('canplay', () => {
     if (!readySettled && heroVideo.paused) attemptPlay();
   });
-  heroVideo.addEventListener('pause', () => {
-    if (!readySettled && !document.hidden) {
-      showUnavailable();
-    }
+  heroVideo.addEventListener('canplaythrough', () => {
+    if (!readySettled && heroVideo.paused) attemptPlay();
   });
   heroVideo.addEventListener('error', showUnavailable);
 
@@ -454,10 +476,10 @@ const initHeroVideo = () => {
   });
 
   statusTimeout = window.setTimeout(() => {
-    if (!readySettled) {
+    if (!readySettled && (heroVideo.readyState < 2 || heroVideo.paused)) {
       showUnavailable();
     }
-  }, 3200);
+  }, 7000);
 };
 
 const initMotion = () => {
