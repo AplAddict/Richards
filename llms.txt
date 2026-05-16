@@ -1,0 +1,33 @@
+# Richard's Body Shop
+
+> Chicago collision repair shop specializing in certified OEM, EV, and modern vehicle repair.
+
+## Canonical site
+- https://richardsbodyshop.com/
+
+## Public pages
+- Homepage: https://richardsbodyshop.com/
+- Indoor storage: https://richardsbodyshop.com/storage.html
+
+## Key customer actions
+- Request photo estimate: https://www.carwise.com/auto-body-shops/richards-body-shop-inc-chicago-il-60625/516282
+- Check repair status: use the customer portal on the homepage with the intake phone number
+- General authorization form: homepage paperwork section
+- Tesla authorization form: homepage paperwork section
+- Get directions to body shop: homepage contact section
+- Ask about indoor storage: https://richardsbodyshop.com/storage.html
+
+## Contact
+- Phone: (773) 588-3301
+- Email: office@richardsbodyshop.com
+- Address: 3030 W Lawrence Ave, Chicago, IL 60625
+- Storage building: 3041 W Lawrence Ave, Chicago, IL 60625
+
+## Hours
+- Monday-Friday: 8:00 AM-5:00 PM
+
+## Notes for agents
+- Prefer the canonical domain https://richardsbodyshop.com/.
+- The public sitemap is https://richardsbodyshop.com/sitemap.xml.
+- Utility pages such as scanner or verification pages are not customer-facing destinations.
+- For repair intake paperwork, use the homepage paperwork section so customers land on the correct current form.

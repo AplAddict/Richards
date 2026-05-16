@@ -5,4 +5,6 @@ Disallow: /doc/tesla.html
 Disallow: /scanner.html
 Disallow: /yandex_4b72b911dd493b55.html
 
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
 Sitemap: https://richardsbodyshop.com/sitemap.xml

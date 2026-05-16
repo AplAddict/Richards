@@ -108,9 +108,12 @@ call-us {
 
 #about,
 #certifications,
-#gallery,
 #dropoff {
   padding: 4.75rem 0;
+}
+
+#gallery {
+  padding: 4.55rem 0 4.2rem;
 }
 
 #certifications .stack-lg > * + *,
