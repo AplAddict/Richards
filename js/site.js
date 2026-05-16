@@ -349,6 +349,7 @@ const initHeroVideo = () => {
   heroVideo.setAttribute('autoplay', '');
   heroVideo.setAttribute('playsinline', '');
   heroVideo.setAttribute('webkit-playsinline', '');
+  heroVideo.setAttribute('x-webkit-airplay', 'deny');
   heroVideo.setAttribute('disableRemotePlayback', '');
   heroVideo.preload = 'auto';
 
@@ -394,6 +395,7 @@ const initHeroVideo = () => {
     heroVideo.setAttribute('autoplay', '');
     heroVideo.setAttribute('playsinline', '');
     heroVideo.setAttribute('webkit-playsinline', '');
+    heroVideo.setAttribute('x-webkit-airplay', 'deny');
     heroVideo.setAttribute('disableRemotePlayback', '');
   };
 
@@ -416,7 +418,7 @@ const initHeroVideo = () => {
         if (!heroVideo.paused) markReady();
       }).catch(() => {
         playFailures += 1;
-        if (playFailures >= 2) {
+        if (playFailures >= 6) {
           showUnavailable();
         }
       });
@@ -462,6 +464,16 @@ const initHeroVideo = () => {
     if (!readySettled && heroVideo.paused) attemptPlay();
   });
   heroVideo.addEventListener('error', showUnavailable);
+  ['pause', 'stalled', 'waiting', 'suspend', 'emptied'].forEach((eventName) => {
+    heroVideo.addEventListener(eventName, () => {
+      if (document.hidden) return;
+      window.setTimeout(() => {
+        if (!document.hidden && heroVideo.paused) {
+          attemptPlay(heroVideo.readyState < 2);
+        }
+      }, eventName === 'pause' ? 250 : 650);
+    });
+  });
 
   if (!heroVideo.paused && heroVideo.readyState >= 2 && heroVideo.currentTime > 0.01) {
     markReady();
@@ -486,7 +498,7 @@ const initHeroVideo = () => {
     if (!readySettled && (heroVideo.readyState < 2 || heroVideo.paused)) {
       showUnavailable();
     }
-  }, 7000);
+  }, 12000);
 };
 
 const initMotion = () => {
@@ -529,12 +541,10 @@ const initMotion = () => {
 
     const certTiles = window.gsap.utils.toArray('.cert-grid .cert-tile');
     if (certTiles.length) {
-      window.gsap.set(certTiles, { autoAlpha: 0, y: 18 });
       window.ScrollTrigger.batch(certTiles, {
         start: 'top 84%',
         once: true,
         onEnter: (batch) => window.gsap.to(batch, {
-          autoAlpha: 1,
           y: 0,
           duration: 0.56,
           ease: 'power2.out',
@@ -547,12 +557,10 @@ const initMotion = () => {
 
     const galleryItems = window.gsap.utils.toArray('.shop-collage--homepage .shop-collage-item');
     if (galleryItems.length) {
-      window.gsap.set(galleryItems, { autoAlpha: 0, y: 20 });
       window.ScrollTrigger.batch(galleryItems, {
         start: 'top 84%',
         once: true,
         onEnter: (batch) => window.gsap.to(batch, {
-          autoAlpha: 1,
           y: 0,
           duration: 0.58,
           ease: 'power2.out',
