@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /doc.html
+Disallow: /doc/tesla.html
+Disallow: /scanner.html
+Disallow: /yandex_4b72b911dd493b55.html
+
+Sitemap: https://richards.isaaczipperstein.com/sitemap.xml

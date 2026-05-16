@@ -2,3 +2,16 @@ css/Richards.code-workspace
 .vscode/settings.json
 images/.DS_Store
 .DS_Store
+
+# local-only backups and scratch artifacts
+private-backups/
+*.bak
+serve_range.py
+images/logos/_logo_sheet.jpg
+images/logos/*-original.*
+images/logos/GM Logo.jpg
+images/logos/assured-performance-badge.svg
+images/logos/gm-certified-badge.svg
+images/logos/honda-acura-badge.svg
+images/logos/rivian-badge.svg
+images/gallery/email-dropoff-step.png
