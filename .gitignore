@@ -6,6 +6,7 @@ Thumbs.db
 
 # local-only backups and scratch artifacts
 private-backups/
+.revert-backups/
 *.bak
 serve_range.py
 images/logos/_logo_sheet.jpg
