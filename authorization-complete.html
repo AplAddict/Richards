@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authorization Received | Richard's Body Shop</title>
+  <meta name="description" content="Confirmation that your repair authorization was submitted to Richard's Body Shop in Chicago.">
+  <meta name="theme-color" content="#0f1012">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="format-detection" content="telephone=yes">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="stylesheet" href="/css/fonts/fontawesome/css/fontawesome.css">
+  <link rel="stylesheet" href="/css/fonts/fontawesome/css/solid.css">
+  <link rel="stylesheet" href="/css/site.css?v=localherofix1">
+  <style>
+    html {
+      --topbar-offset: 0px;
+      --nav-top: 0px;
+    }
+
+    .authorization-complete-page .site-nav {
+      top: 0;
+    }
+
+    .authorization-confirmation {
+      min-height: calc(100vh - var(--nav-height));
+      display: grid;
+      align-items: center;
+      padding: clamp(3.5rem, 8vw, 7rem) 0;
+      color: var(--text-light);
+      background:
+        radial-gradient(circle at 78% 18%, rgba(176, 17, 17, 0.28), transparent 30%),
+        linear-gradient(135deg, rgba(8, 9, 10, 0.94), rgba(8, 9, 10, 0.82)),
+        url('/images/background.webp') center/cover no-repeat;
+    }
+
+    .authorization-confirmation-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      gap: clamp(1.5rem, 4vw, 3.5rem);
+      align-items: center;
+    }
+
+    .authorization-copy {
+      max-width: 720px;
+    }
+
+    .authorization-copy h1 {
+      max-width: 13ch;
+      margin: 0 0 1.2rem;
+      font-size: clamp(2.6rem, 7vw, 5.6rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+
+    .authorization-copy > p:not(.eyebrow) {
+      max-width: 640px;
+      margin: 0;
+      color: rgba(248, 249, 251, 0.76);
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+    }
+
+    .authorization-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 2rem;
+    }
+
+    .authorization-summary {
+      padding: clamp(1.35rem, 4vw, 2rem);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius);
+      background: rgba(20, 22, 26, 0.86);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .authorization-check {
+      display: grid;
+      place-items: center;
+      width: 58px;
+      height: 58px;
+      margin-bottom: 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 50%;
+      color: #fff;
+      background: var(--red);
+      font-size: 1.45rem;
+    }
+
+    .authorization-summary h2 {
+      margin: 0 0 0.65rem;
+      font-size: 1.35rem;
+      color: #fff;
+    }
+
+    .authorization-summary p {
+      margin: 0;
+      color: rgba(248, 249, 251, 0.7);
+    }
+
+    .authorization-note {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 1.4rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(248, 249, 251, 0.72);
+      font-size: 0.94rem;
+    }
+
+    .authorization-note i {
+      margin-top: 0.3rem;
+      color: #fff;
+    }
+
+    @media (max-width: 800px) {
+      .authorization-confirmation-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .authorization-copy h1 {
+        max-width: 11ch;
+      }
+
+      .authorization-actions .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body class="authorization-complete-page">
+  <div class="site-shell">
+    <nav class="site-nav" aria-label="Primary navigation">
+      <div class="container nav-inner">
+        <a class="brand" href="/" aria-label="Richard's Body Shop home">
+          <img src="/images/me.png" alt="Richard's Body Shop logo" width="56" height="56">
+          <span>
+            <strong>Richard's Body Shop</strong>
+            <small>Chicago collision repair</small>
+          </span>
+        </a>
+
+        <div class="nav-links">
+          <a href="/#status">Customer Portal</a>
+          <a href="/#contact">Contact</a>
+          <a class="nav-cta" href="tel:7735883301">Call Now</a>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main-content">
+      <section class="authorization-confirmation" aria-labelledby="confirmation-title">
+        <div class="container authorization-confirmation-grid">
+          <div class="authorization-copy">
+            <p class="eyebrow">Submission complete</p>
+            <h1 id="confirmation-title">Authorization received.</h1>
+            <p>Your completed authorization has been submitted to Richard's Body Shop. A signed copy will be emailed to the address you provided.</p>
+
+            <div class="authorization-actions">
+              <a class="button button-primary" href="/">Return to Website</a>
+              <a class="button button-secondary" href="/#status">Check Repair Status</a>
+              <a class="button button-ghost" href="tel:7735883301">Call (773) 588-3301</a>
+            </div>
+          </div>
+
+          <aside class="authorization-summary" aria-label="Submission confirmation details">
+            <div class="authorization-check" aria-hidden="true">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <h2>No need to submit again</h2>
+            <p>Your authorization has been recorded. Please keep the emailed copy for your records.</p>
+            <div class="authorization-note">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              <span>If the email does not arrive within a few minutes, check your spam folder or contact the shop.</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h2>Richard's Body Shop</h2>
+          <p>3030 W Lawrence Ave<br>Chicago, IL 60625</p>
+          <p><a href="tel:7735883301">(773) 588-3301</a><br><a href="mailto:office@richardsbodyshop.com">office@richardsbodyshop.com</a></p>
+        </div>
+
+        <div>
+          <h3>Quick links</h3>
+          <ul class="footer-links">
+            <li><a href="/#status">Customer portal</a></li>
+            <li><a href="/#contact">Contact</a></li>
+            <li><a href="/storage.html">Indoor car storage</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
