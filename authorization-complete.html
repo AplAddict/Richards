@@ -2,12 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Authorization Received | Richard's Body Shop</title>
   <meta name="description" content="Confirmation that your repair authorization was submitted to Richard's Body Shop in Chicago.">
   <meta name="theme-color" content="#0f1012">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Richard's">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="robots" content="noindex,nofollow">
   <meta name="format-detection" content="telephone=yes">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/app-icon-180.png">
   <link rel="icon" type="image/png" href="/images/favicon.png">
   <link rel="stylesheet" href="/css/fonts/fontawesome/css/fontawesome.css">
   <link rel="stylesheet" href="/css/fonts/fontawesome/css/solid.css">
@@ -18,9 +24,6 @@
       --nav-top: 0px;
     }
 
-    .authorization-complete-page .site-nav {
-      top: 0;
-    }
 
     .authorization-confirmation {
       min-height: calc(100vh - var(--nav-height));
