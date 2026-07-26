@@ -230,6 +230,14 @@ window.addEventListener('load', syncWidgetFallbacks);
   window.setTimeout(syncWidgetFallbacks, delay);
 });
 
+// Elfsight can finish rendering well after the fixed fallback checks above.
+// Watch each lazy app so the verified fallback disappears as soon as the
+// live widget has usable content, without leaving duplicate review/feed UI.
+document.querySelectorAll('[data-elfsight-app-lazy]').forEach((app) => {
+  const observer = new MutationObserver(syncWidgetFallbacks);
+  observer.observe(app, { childList: true, subtree: true });
+});
+
 if (chatSelector) {
   const syncChatWidget = () => {
     const callUs = chatSelector.shadowRoot?.querySelector('call-us');

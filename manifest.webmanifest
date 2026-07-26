@@ -2,12 +2,12 @@
   "id": "/",
   "name": "Richard's Body Shop",
   "short_name": "Richard's",
-  "description": "Richard's Body Shop customer portal and repair authorization forms.",
+  "description": "Chicago collision repair, repair updates, customer forms, and contact information.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#0f1012",
-  "theme_color": "#0f1012",
+  "background_color": "#0f0f10",
+  "theme_color": "#0f0f10",
   "orientation": "any",
   "icons": [
     {

@@ -2675,4 +2675,128 @@ body.modal-open {
   .card {
     padding: 1rem;
   }
+
+  /* Prevent long addresses and step copy from forcing horizontal overflow. */
+  .two-column > *,
+  .dropoff-grid > *,
+  .section-copy,
+  .feature-list,
+  .map-card,
+  .dropoff-step-column,
+  .process-card {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Preview audit polish — isolated on the preview branch until approved. */
+@font-face {
+  font-family: 'InterLocal';
+  src: url('/css/fonts/inter-latin.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+body {
+  font-family: 'InterLocal', Inter, sans-serif;
+}
+
+.site-nav .container,
+.hero > .container {
+  width: min(calc(100% - 3rem), 1480px);
+}
+
+.home-page .hero-copy h1 {
+  max-width: 14ch;
+  font-size: clamp(3.25rem, 6.2vw, 5.35rem);
+  text-wrap: balance;
+}
+
+.home-page .hero-copy .hero-lead {
+  max-width: 48rem;
+  text-wrap: balance;
+}
+
+.home-page .hero-card li:last-child {
+  margin-bottom: 0;
+}
+
+.reviews-fallback-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.fallback-review-source {
+  display: grid;
+  align-content: start;
+  gap: 0.75rem;
+  min-height: 100%;
+  padding: 1.25rem;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.fallback-review-source h3,
+.fallback-review-source p {
+  margin: 0;
+}
+
+.fallback-review-source p {
+  color: rgba(255, 255, 255, 0.76) !important;
+}
+
+.fallback-review-source .button {
+  width: fit-content;
+  margin-top: 0.35rem;
+}
+
+.review-source-kicker {
+  color: #f3c969;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  .site-nav .container,
+  .hero > .container {
+    width: min(calc(100% - 1rem), var(--container));
+  }
+
+  .home-page .hero-copy h1 {
+    max-width: 11ch;
+    font-size: clamp(2.45rem, 10.6vw, 3.25rem);
+  }
+
+  .home-page .hero-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+    margin: 1.1rem 0 0.8rem;
+  }
+
+  .home-page .hero-actions .button {
+    min-height: 52px;
+    padding-inline: 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.25;
+  }
+
+  .fallback-review-source .button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .home-page .hero-copy h1 {
+    max-width: none;
+    font-size: clamp(1.9rem, 8.7vw, 2.25rem);
+  }
+
+  .home-page .hero-actions {
+    grid-template-columns: 1fr;
+  }
 }
