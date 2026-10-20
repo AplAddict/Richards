@@ -2682,3 +2682,35 @@ body.modal-open {
     padding: 1rem;
   }
 }
+
+/* Certification logo normalization: consistent optical size, breathing room, full last row */
+.cert-tile-media { padding: 0.4rem 0.7rem; box-sizing: border-box; }
+.cert-tile-featured .cert-tile-media { padding: 0.4rem 0.7rem; }
+.cert-logo--badge, .cert-logo--dense { max-width: 76%; max-height: 74px; }
+.cert-logo--tesla { max-width: 70%; max-height: 62px; }
+.cert-logo--landrover { max-width: 66%; max-height: 62px; transform: none; }
+.cert-logo--subaru { max-width: 72%; max-height: 40px; }
+.cert-logo--wide { max-width: 94%; max-height: 62px; }
+.cert-logo--rivian, .cert-logo--hyundai, .cert-logo--infiniti { max-width: 94%; transform: none; }
+.cert-logo--infiniti { max-height: 66px; }
+.cert-logo--assured { max-width: 90%; max-height: 62px; }
+.cert-logo--gm { max-width: 88%; max-height: 66px; }
+.cert-logo--honda-acura { max-width: 82%; max-height: 74px; }
+.cert-logo--mazda { max-width: 96%; max-height: 30px; transform: none; }
+.cert-tile-span2 { grid-column: span 2; }
+.cert-logo--volvo { max-width: 94%; max-height: 72px; border-radius: 8px; }
+@media (max-width: 760px) {
+  .cert-tile-media { padding: 0.3rem 0.5rem; }
+  .cert-logo--mazda { max-height: 24px; }
+  .cert-logo--volvo { max-width: 96%; max-height: 62px; }
+}
+.cert-logo--tesla { max-width: 58%; max-height: 54px; }
+.cert-logo--nissan { max-width: 84%; max-height: 84px; }
+.cert-tile .cert-logo--tesla { max-width: 60%; max-height: 56px; }
+.cert-tile .cert-logo--rivian { max-width: 90%; max-height: 52px; }
+.cert-tile .cert-logo--gm { max-width: 86%; max-height: 64px; }
+.cert-tile .cert-logo--icar { max-width: 72%; max-height: 72px; }
+.cert-tile .cert-logo--nissan { max-width: 90%; max-height: 74px; }
+.cert-tile .cert-logo--mazda { max-height: 34px; }
+.cert-tile-media { height: 88px; min-height: 88px; }
+@media (max-width: 760px) { .cert-tile-media { height: 76px; min-height: 76px; } .cert-tile .cert-logo--mazda { max-height: 26px; } }
