@@ -1922,12 +1922,6 @@ section[id],
   transform: scale(1.08);
 }
 
-.cert-logo--volvo {
-  max-width: 100%;
-  max-height: 76px;
-  border-radius: 8px;
-}
-
 .cert-tile-name {
   display: block;
   margin-top: 0.55rem;
@@ -2683,34 +2677,33 @@ body.modal-open {
   }
 }
 
-/* Certification logo normalization: consistent optical size, breathing room, full last row */
-.cert-tile-media { padding: 0.4rem 0.7rem; box-sizing: border-box; }
-.cert-tile-featured .cert-tile-media { padding: 0.4rem 0.7rem; }
-.cert-logo--badge, .cert-logo--dense { max-width: 76%; max-height: 74px; }
-.cert-logo--tesla { max-width: 70%; max-height: 62px; }
-.cert-logo--landrover { max-width: 66%; max-height: 62px; transform: none; }
-.cert-logo--subaru { max-width: 72%; max-height: 40px; }
-.cert-logo--wide { max-width: 94%; max-height: 62px; }
-.cert-logo--rivian, .cert-logo--hyundai, .cert-logo--infiniti { max-width: 94%; transform: none; }
-.cert-logo--infiniti { max-height: 66px; }
-.cert-logo--assured { max-width: 90%; max-height: 62px; }
-.cert-logo--gm { max-width: 88%; max-height: 66px; }
-.cert-logo--honda-acura { max-width: 82%; max-height: 74px; }
-.cert-logo--mazda { max-width: 96%; max-height: 30px; transform: none; }
-.cert-tile-span2 { grid-column: span 2; }
-.cert-logo--volvo { max-width: 94%; max-height: 72px; border-radius: 8px; }
-@media (max-width: 760px) {
-  .cert-tile-media { padding: 0.3rem 0.5rem; }
-  .cert-logo--mazda { max-height: 24px; }
-  .cert-logo--volvo { max-width: 96%; max-height: 62px; }
-}
-.cert-logo--tesla { max-width: 58%; max-height: 54px; }
-.cert-logo--nissan { max-width: 84%; max-height: 84px; }
-.cert-tile .cert-logo--tesla { max-width: 60%; max-height: 56px; }
-.cert-tile .cert-logo--rivian { max-width: 90%; max-height: 52px; }
+/* Certification logos: layout-only normalization. Logo image files are used exactly as supplied (no crop/edit);
+   apparent size is adjusted with CSS scaling and clipped to the tile's media area. */
+.cert-tile-media { height: 88px; min-height: 88px; padding: 0.4rem 0.7rem; box-sizing: border-box; overflow: hidden; }
+.cert-tile-featured .cert-tile-media { height: 88px; min-height: 88px; padding: 0.4rem 0.7rem; }
+.cert-tile .cert-logo--badge, .cert-tile .cert-logo--dense { max-width: 76%; max-height: 74px; }
+.cert-tile .cert-logo--wide { max-width: 94%; max-height: 62px; }
+.cert-tile .cert-logo--rivian { max-width: 90%; max-height: 52px; transform: none; }
+.cert-tile .cert-logo--hyundai,
+.cert-tile .cert-logo--infiniti { max-width: 94%; max-height: 66px; transform: none; }
 .cert-tile .cert-logo--gm { max-width: 86%; max-height: 64px; }
+.cert-tile .cert-logo--assured { max-width: 90%; max-height: 62px; }
+.cert-tile .cert-logo--honda-acura { max-width: 82%; max-height: 74px; }
 .cert-tile .cert-logo--icar { max-width: 72%; max-height: 72px; }
 .cert-tile .cert-logo--nissan { max-width: 90%; max-height: 74px; }
-.cert-tile .cert-logo--mazda { max-height: 34px; }
-.cert-tile-media { height: 88px; min-height: 88px; }
-@media (max-width: 760px) { .cert-tile-media { height: 76px; min-height: 76px; } .cert-tile .cert-logo--mazda { max-height: 26px; } }
+/* originals with large transparent/white margins baked in: scale up visually, clipped by .cert-tile-media */
+.cert-tile .cert-logo--tesla { max-width: 76%; max-height: 76px; transform: scale(1.3); }
+.cert-tile .cert-logo--landrover { max-width: 80%; max-height: 66px; transform: scale(1.35); }
+.cert-tile .cert-logo--subaru { max-width: 80%; max-height: 76px; transform: scale(2.3); }
+/* very thin wordmarks: give them more horizontal room */
+.cert-tile-wide { grid-column: span 2; }
+.cert-tile .cert-logo--mazda { max-width: 92%; max-height: 40px; transform: none; }
+/* Volvo: original image unmodified; background box is CSS on the wrapper, multiply blends the image's white into it */
+.cert-tile-volvo .cert-tile-media { padding: 0.5rem 0.7rem; background: #e9ebee; border-radius: 10px; overflow: hidden; }
+.cert-tile .cert-logo--volvo { width: 100%; max-width: 100%; max-height: 100%; mix-blend-mode: multiply; object-fit: contain; }
+@media (max-width: 760px) {
+  .cert-tile-media, .cert-tile-featured .cert-tile-media { height: 76px; min-height: 76px; padding: 0.3rem 0.5rem; }
+  .cert-tile-wide-m, .cert-tile-volvo { grid-column: span 2; }
+  .cert-tile .cert-logo--mazda { max-height: 30px; }
+  .cert-tile .cert-logo--honda-acura { max-height: 66px; }
+}
